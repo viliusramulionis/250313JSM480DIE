@@ -47,3 +47,11 @@
     git remote add origin REPOZITORIJOS_ADRESAS - Nurodome repozitorijos adresą
 
     git push -u origin main - Kėlimo iniciavimas
+
+# Git komandos atnaujinant repozitoriją
+
+    git add . - Nurodome failus kuriuos norėsime kelti
+
+    git commit -m "Zunutes tekstas" - Nurodome komito zinute
+
+    git push - Inicijuojame pakeitimus
