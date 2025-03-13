@@ -52,6 +52,22 @@
 
     git add . - Nurodome failus kuriuos norėsime kelti
 
-    git commit -m "Zunutes tekstas" - Nurodome komito zinute
+    git commit -m "Zinutes tekstas" - Nurodome komito zinute
 
     git push - Inicijuojame pakeitimus
+
+# GIT atšakų (branches) kūrimas
+
+    git branch PAVADINIMAS - atšakos sukūrimo iniciavimas
+
+    git checkout PAVADINIMAS - aktyvios šakos keitimas
+
+    git push -u origin PAVADINIMAS - pakeitimų perdavimas i github'ą
+
+# GIT atšakų sujungimas
+
+    git checkout BRANCHAS_I_KURI_NORIME_PERKELTI_DUOMENIS 
+
+    git merge BRANCHAS_IS_KURIO_NORIME_PAIMTI_DUOMENIS
+
+    git push
