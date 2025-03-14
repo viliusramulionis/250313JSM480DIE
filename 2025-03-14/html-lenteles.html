@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lentelės</title>
+</head>
+<body>
+    <h2>Pirmas lentelės pavyzdys:</h2>
+    <!-- Emmet komanda: table>tbody>tr*3>td*5 -->
+
+    <table border="1">
+        <tbody>
+            <!-- tr (table row) eilutės žymėjimas -->
+            <tr>
+                <!-- td (table data) stuleplio žymėjimas -->
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Antras lentelės pavyzdys:</h2>
+
+    <!-- width atributas skirtas nurodyti lentelės arba stulpelio plotį -->
+
+    <table border="1" width="500">
+        <tbody>
+            <tr>
+                <td width="30">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td width="150">5</td>
+            </tr>
+            <tr>
+                <td height="80">6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Trečias lentelės pavyzdys:</h2>
+
+    <!-- colspan atributas nurodo kiek stulpelių vietos šis turėtų užimti -->
+    <!-- rowspan atlieka tą patį eilutės atžvilgiu -->
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td colspan="2">1 2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td rowspan="2">10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Ketvirtas lentelės pavyzdys:</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <!-- th (table heading) -->
+                <th>Produktas</th>
+                <th>Kaina</th>
+                <th>Kiekis</th>
+                <th>Suma</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Televizorius</td>
+                <td>199.99</td>
+                <td>1</td>
+                <td>199.99</td>
+            </tr>
+            <tr>
+                <td>Kompiuteris</td>
+                <td>1000</td>
+                <td>3</td>
+                <td>3000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Viso su PVM:</td>
+                <td>3800</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
