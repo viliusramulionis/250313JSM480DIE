@@ -11,6 +11,8 @@
     ctrl + /                            cmd + /         Komentarų kūrimas
     shift + ctrl + rodykle i virsu                      Kopijuoja eilutę į viršūų
     shift + ctrl + rodykle i zemyn                      Kopijuoja eilutę į apačią
+    tab                                                 Indentuoja kodą nuo kairės pusės
+    shift + tab                                         Stumia kodą link kairės pusės
 
 # Terminalo komandos (Windows)
     dir (ls) - Išvardina visus failus direktorijoje
