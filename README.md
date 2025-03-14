@@ -2,12 +2,15 @@
 
 # Klavišų kombinacijos
 
-    WIN         MAC             Veiksmas
-    ctrl + c    cmd + c         Kopijuoja turinį
-    ctrl + v    cmd + v         Įklijuoja kopijuotą turinį turinį
-    ctrl + s    cmd + s         Išsaugo failą
-    ctrl + a    cmd + a         Pasirenka visą tekstą
-    ctrl + f    cmd + f         Paieškos atidarymas
+    WIN                                 MAC             Veiksmas
+    ctrl + c                            cmd + c         Kopijuoja turinį
+    ctrl + v                            cmd + v         Įklijuoja kopijuotą turinį turinį
+    ctrl + s                            cmd + s         Išsaugo failą
+    ctrl + a                            cmd + a         Pasirenka visą tekstą
+    ctrl + f                            cmd + f         Paieškos atidarymas
+    ctrl + /                            cmd + /         Komentarų kūrimas
+    shift + ctrl + rodykle i virsu                      Kopijuoja eilutę į viršūų
+    shift + ctrl + rodykle i zemyn                      Kopijuoja eilutę į apačią
 
 # Terminalo komandos (Windows)
     dir (ls) - Išvardina visus failus direktorijoje
