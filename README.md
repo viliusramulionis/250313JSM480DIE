@@ -3,6 +3,8 @@
 # Klavišų kombinacijos
 
     WIN                                 MAC             Veiksmas
+    ctrl + z                            cmd + z         Atstato pakeitimą į ankstesnį
+    ctrl + y                            cmd + shift + z Grąžina pakeitimus atgal
     ctrl + c                            cmd + c         Kopijuoja turinį
     ctrl + v                            cmd + v         Įklijuoja kopijuotą turinį turinį
     ctrl + s                            cmd + s         Išsaugo failą
