@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stiliai</title>
+    <!-- CSS (Cascading Stylesheets) -->
+    <style>
+        /* Style elemente rašoma CSS sintaksė */
+
+        /* selektorius {
+            savybe: reiksme;
+        } */
+
+        /* Elemento selektorius atrenka visus h2 elementus esančius dokumente */
+        h2 {
+            /* color savybė yra skirta nurodyti teksto spalvą */
+            /* galimos reikšmės: 
+                angliškas pavadinimas
+                rgb(0, 0, 0) 
+                hex #000000
+                hsl(0, 0, 0)
+            */
+            color:rgb(227, 26, 26);
+
+            /* background-color: nurodo fono spalvą */
+            background-color: black;
+        }
+
+        p {
+            /* Šrifto dydžio keitimas */
+            /* Pagal nutylėjimą, naršyklėje šrifto dydis yra 16px */
+            /* px žymi pikselio matmenį */
+
+            font-size: 28px;
+        }
+
+        /* Klasės selektorius */
+        .unikali-pastraipa {
+            font-size: 18px;
+            color: red;
+        }
+
+        /* Stiliai yra perrašomi t.y. žemiau einantys stiliai perrašo pieš tai buvusius */
+
+        h2 {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, doloribus!</h2>
+    
+    <!-- Naudojant style atributą galime priskirti stiliaus parametrus -->
+
+    <h2 style="color:darkgreen">Lorem, ipsum dolor.</h2>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quisquam vero a ullam dolore mollitia quam nam sit tenetur fugit obcaecati unde delectus expedita quidem vitae, earum voluptatem magni reprehenderit facilis? Facere, quos rerum! Eveniet veritatis, quaerat veniam ratione repellendus asperiores quasi officia! Architecto modi dolorem veritatis? Dicta, quisquam corrupti.</p>
+    
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quisquam vero a ullam dolore mollitia quam nam sit tenetur fugit obcaecati unde delectus expedita quidem vitae, earum voluptatem magni reprehenderit facilis? Facere, quos rerum! Eveniet veritatis, quaerat veniam ratione repellendus asperiores quasi officia! Architecto modi dolorem veritatis? Dicta, quisquam corrupti.</p>
+    
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quisquam vero a ullam dolore mollitia quam nam sit tenetur fugit obcaecati unde delectus expedita quidem vitae, earum voluptatem magni reprehenderit facilis? Facere, quos rerum! Eveniet veritatis, quaerat veniam ratione repellendus asperiores quasi officia! Architecto modi dolorem veritatis? Dicta, quisquam corrupti.</p>
+    
+    <!-- Klasiu pavaidnimuose negali buti tarpu -->
+     
+    <p class="unikali-pastraipa">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quisquam vero a ullam dolore mollitia quam nam sit tenetur fugit obcaecati unde delectus expedita quidem vitae, earum voluptatem magni reprehenderit facilis? Facere, quos rerum! Eveniet veritatis, quaerat veniam ratione repellendus asperiores quasi officia! Architecto modi dolorem veritatis? Dicta, quisquam corrupti.</p>
+    
+    <p class="unikali-pastraipa">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quisquam vero a ullam dolore mollitia quam nam sit tenetur fugit obcaecati unde delectus expedita quidem vitae, earum voluptatem magni reprehenderit facilis? Facere, quos rerum! Eveniet veritatis, quaerat veniam ratione repellendus asperiores quasi officia! Architecto modi dolorem veritatis? Dicta, quisquam corrupti.</p>
+    
+    <p class="unikali-pastraipa">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quisquam vero a ullam dolore mollitia quam nam sit tenetur fugit obcaecati unde delectus expedita quidem vitae, earum voluptatem magni reprehenderit facilis? Facere, quos rerum! Eveniet veritatis, quaerat veniam ratione repellendus asperiores quasi officia! Architecto modi dolorem veritatis? Dicta, quisquam corrupti.</p>
+    
+    <p class="unikali-pastraipa">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quisquam vero a ullam dolore mollitia quam nam sit tenetur fugit obcaecati unde delectus expedita quidem vitae, earum voluptatem magni reprehenderit facilis? Facere, quos rerum! Eveniet veritatis, quaerat veniam ratione repellendus asperiores quasi officia! Architecto modi dolorem veritatis? Dicta, quisquam corrupti.</p>
+</body>
+</html>
