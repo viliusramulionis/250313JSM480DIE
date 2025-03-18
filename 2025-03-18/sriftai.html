@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šriftai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* Šrifto šeima ir su šriftu susiję stiliai yra pveldimi iš tėvinio elemento */
+            font-family: Arial, Helvetica, sans-serif;
+
+            /* Šrifto pavertimas į šoną */
+            font-style:italic;
+
+            /* Šrifto pastorinimas */
+            font-weight: bold;
+
+            /* Šrifto dydžio nurodymas */
+            font-size: 20px;
+        }
+
+        h1 {
+            /* Šrifto pakeitimas */
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
+        }
+
+        .didesnis {
+            font-size: 36px;
+        }
+        
+        .tekstas-grazus {
+            font-size: 50px;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .tekstas-perbrauktas {
+            /* Teksto perbraukimas */
+            text-decoration:line-through;
+        }
+
+        .tekstas-pabrauktas {
+            /* Teksto PAbraukimas */
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-family: "Playwrite HU", cursive;
+        }
+
+        .pirmas-stilius {
+            font-weight: 100;
+        }
+
+        .antras-stilius {
+            font-weight: 200;
+        }
+
+        .trecias-stilius {
+            font-weight: 300;
+        }
+
+        .ketvirtas-stilius {
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <!-- Šrifto stilių paveldimumas -->
+
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, optio.</h1>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus minus harum, eaque, illum magni enim repellat quae maiores placeat voluptatem, quia temporibus consequatur fugiat nemo quas laudantium voluptates aperiam vitae!</p>
+
+    <p class="didesnis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odit, cupiditate similique iste maxime amet facere architecto vitae corrupti excepturi ipsa. Nulla odio saepe veritatis perspiciatis suscipit fugit quisquam odit.</p>
+
+    <!-- Šrifto formatavimas -->
+
+    <p>
+        <span class="tekstas-grazus">Lorem ipsum dolor</span>, 
+        sit amet consectetur 
+        <span class="tekstas-perbrauktas">adipisicing elit</span>. 
+        Voluptatum rem enim quos quidem quibusdam libero beatae. 
+        <span class="tekstas-pabrauktas">Laborum repellat mollitia</span>, ab hic consequatur molestiae nesciunt similique labore quis cum autem accusamus?
+    </p>
+    
+    <!-- Playwrite šrifto pavyzdys -->
+
+    <h2 class="pirmas-stilius">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa?</h2>
+    
+    <h2 class="antras-stilius">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa?</h2>
+    
+    <h2 class="trecias-stilius">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa?</h2>
+    
+    <h2 class="ketvirtas-stilius">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa?</h2>
+
+</body>
+</html>
