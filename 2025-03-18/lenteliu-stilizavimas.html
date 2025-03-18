@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lentelių stilizavimas</title>
+    <style>
+        table {
+            /* Savybė border skirta kraštinei nurodyti */
+            /* Reikšmė susideda iš trijų pozicijų: storis, stilius, spalva */
+            border: 1px solid black;
+            
+            /* Tarpelių tarp lentelės stulpelių ir eilučių panaikinimas */
+            border-collapse: collapse;
+
+            /* Norint pakeisti elemento plotį */
+            width: 600px;
+        }
+
+        /* Selektorius galime sujungti per kablelį */
+        /* .klase, .antra-klase, .trecia-klase, thead {} */
+
+        td, th {
+            border: 1px solid black;
+
+            /* Norint pakeisti elemento aukštį: */
+            height: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Produktas</th>
+                <th>Kiekis</th>
+                <th>Kaina</th>
+                <th>Galutinė kaina</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Lorem, ipsum dolor.</td>
+                <td>1</td>
+                <td>199.99</td>
+                <td>199.99</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Lorem, ipsum dolor.</td>
+                <td>1</td>
+                <td>199.99</td>
+                <td>199.99</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lorem, ipsum dolor.</td>
+                <td>1</td>
+                <td>199.99</td>
+                <td>199.99</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Lorem, ipsum dolor.</td>
+                <td>1</td>
+                <td>199.99</td>
+                <td>199.99</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

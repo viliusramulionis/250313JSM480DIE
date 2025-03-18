@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krastines</title>
+    <style>
+        .dezute {
+            /* Pločio priskyrimas */
+            width: 500px;
+            /* Aukščio priskyrimas */
+            height: 500px;
+            /* Fono spalvos priskyrimas */
+            background-color: rgb(255, 15, 15);
+        }
+
+        .dezute1 {
+            width: 500px;
+            height: 500px;
+            background-color: orange;
+            
+            /* Pagal nutylėjimą kraštinės storis nėra įskaičiuojamas į bendrą plotį */
+            border: 30px solid black;
+        }
+        
+        .dezute2 {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(106, 255, 0);
+            
+            /* Norint priskirti kraštinę iš kairės pusės */
+            border-left: 30px solid black;
+        }
+
+        .dezute3 {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(106, 255, 0);
+
+            /* Norint priskirti kraštinę iš dešinės pusės */
+            border-right: 30px solid black;
+        }
+
+        .dezute4 {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(106, 255, 0);
+
+            /* Norint priskirti kraštinę iš apačios */
+            border-bottom: 30px solid black;
+        }
+
+        .dezute5 {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(106, 255, 0);
+
+            /* Norint priskirti kraštinę iš viršaus */
+            border-top: 30px solid black;
+        }
+
+        .dezute5 {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(255, 153, 0);
+
+            /* Aprašymas vienoje reikšmėje */
+            border: 25px solid red;
+
+            /* Reikšmių išskaidymas */
+            border-width: 25px;
+            border-style: solid;
+            border-color: red;
+
+            /* Norint nuimti kraštinę */
+            /* border: none; */
+        }
+    </style>
+</head>
+<body>
+    <div class="dezute"></div>
+    <div class="dezute1"></div>
+    <div class="dezute2"></div>
+    <div class="dezute3"></div>
+    <div class="dezute4"></div>
+    <div class="dezute5"></div>
+    <div class="dezute6"></div>
+</body>
+</html>
