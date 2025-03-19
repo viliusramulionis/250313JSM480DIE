@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduotis 1.1</title>
+    <style>
+        h2 {
+            background-color: #8ebb8e;
+            color: white;
+        }
+
+        .pirmas {
+            background-color: #f4f4db;
+        }
+
+        .antras {
+            background-color: #644af6;
+            color: white;
+        }
+
+        .trecias {
+            background-color: green;
+            color: white;
+        }
+
+        .ketvirtas {
+            background-color: red;
+            color: white;
+        }
+        
+        /* Nurodome stiliaus pakeitimus, kuomet elementas užvestas su pele */
+        li:hover {
+            color: yellow;
+        }
+        
+        /* 
+        nth-child() pseudo klasės selektorius pagal kurį 
+        pasirenkame elementą pagal jo poziciją tėviniame elemente
+        */
+        .pirmas li:nth-child(3),
+        .pirmas li:nth-child(5),
+        .antras li:nth-child(2),
+        .antras li:nth-child(3),
+        .antras li:nth-child(6),
+        .antras li:nth-child(8) {
+            background-color: black;
+            color: red;
+        }
+
+        /* Nurodymas priskirti savybes kas kelintam elementui */
+        /* taipogi galimi variantai: odd (nelyginis) ir even (lyginis) */
+        .trecias li:nth-child(2n) {
+            color: black;
+        }
+
+        /* Norint pasirinkti pirmą elementą */
+        /* naudojame :first-child selektorių */
+        .ketvirtas li:first-child {
+            color: black;
+        }
+
+        /* Norint pasirinkti paskutinį elementą */
+        /* naudojame :last-child selektorių */
+        .ketvirtas li:last-child {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pirmas sąrašas</h2>
+    <ul class="pirmas">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+    <h2>Antras sąrašas</h2>
+    <ul class="antras">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+    <h2>Trečias sąrašas</h2>
+    <ul class="trecias">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+    <h2>Ketvirtas sąrašas</h2>
+    <ul class="ketvirtas">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+</body>
+</html>
