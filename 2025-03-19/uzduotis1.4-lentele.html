@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduotis 1.4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* font-family: "Mukta", sans-serif; */
+        /* font-family: "Noto Sans", sans-serif; */
+        body {
+            background-color: #f8fafe;
+            font-family: "Mukta", sans-serif;
+        }
+
+        table {
+            border: 3px solid #e1e1e1;
+            border-collapse: collapse;
+            width: 700px;
+            background-color: white;
+        }
+
+        th {
+            font-family: "Noto Sans", sans-serif;
+            text-transform: uppercase;
+            color: #4f546d;
+            font-size: 13px;
+            height: 50px;
+            text-align: left;
+            border-bottom: 2px solid #efefef;
+            /* Tarpams tarp raidžių padidinti */
+            letter-spacing: 1px;
+        }
+
+        td {
+            height: 60px;
+        }
+
+        .pirmas {
+            width: 40px;
+        }
+        
+        .paskutinis {
+            width: 40px;
+        }
+
+        tr:nth-child(2n) {
+            background-color: #f3f5fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: #327afd;
+        }
+
+        th:nth-child(6),
+        td:nth-child(6) {
+            text-align: right;
+        }
+
+        .red {
+            background-color: #feccd1;
+            color: #cd3f5c;
+            text-align: center;
+            /* Eilutės aukščio nustatymas */
+            line-height: 35px;
+        }
+
+        .green {
+            background-color: #c7e5c8;
+            color: #4a9850;
+            text-align: center;
+            /* Eilutės aukščio nustatymas */
+            line-height: 35px;
+        }
+
+        .yellow {
+            background-color: #feefc1;
+            color: #a68b01;
+            text-align: center;
+            /* Eilutės aukščio nustatymas */
+            line-height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="pirmas"></th>
+                <th>Invoice</th>
+                <th>Company</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Amount</th>
+                <th class="paskutinis"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td><a href="">INV_1001</a></td>
+                <td>Paragon</td>
+                <td>1/5/2021</td>
+                <td>
+                    <div class="red">Unpaid</div>
+                </td>
+                <td>$520.18</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="">INV_1001</a></td>
+                <td>Paragon</td>
+                <td>1/5/2021</td>
+                <td>
+                    <div class="green">Paid</div>
+                </td>
+                <td>$520.18</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="">INV_1001</a></td>
+                <td>Paragon</td>
+                <td>1/5/2021</td>
+                <td>
+                    <div class="yellow">Pending</div>
+                </td>
+                <td>$520.18</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="">INV_1001</a></td>
+                <td>Paragon</td>
+                <td>1/5/2021</td>
+                <td>
+                    <div class="yellow">Pending</div>
+                </td>
+                <td>$520.18</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="">INV_1001</a></td>
+                <td>Paragon</td>
+                <td>1/5/2021</td>
+                <td>
+                    <div class="green">Paid</div>
+                </td>
+                <td>$520.18</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
