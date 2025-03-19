@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin</title>
+    <style>
+        .dezute {
+            width: 300px;
+            height: 300px;
+            background-color: brown;
+        }
+
+        .dezute1 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(3, 116, 3);
+            /* Atstūmimas nuo kitų elementų iš visų keturių kraštų (nurodoma viena reikšmė)*/
+            margin: 50px;
+        }
+
+        .dezute2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(0, 0, 182);
+            /* Atstūmimas vienoje kryptyje*/
+            
+            /* Kairė: */
+            /* margin-left: 100px;  */
+            /* Dešinė: */
+            /* margin-right: 100px;  */
+            /* Viršus: */
+            /* margin-top: 100px;  */
+            /* Apačia */
+            margin-bottom: 100px;
+        }
+
+        .dezute3 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(187, 178, 0);
+            /* 
+            Jeigu turime kelis elementus einančius iš eilės 
+            ir turinčius priskirtą margin savybę tose pačiose kryptyse, 
+            naudojama didesnė reikšmė
+            */
+            margin-top: 100px;
+        }
+
+        .dezute4 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(0, 251, 251);
+            
+            /* Iš viso galimos keturios reikšmės: */
+            /* margin: 0 0 0 0; */
+            /* 
+                Atitraukimai visoms keturioms kraštinėms,  
+                pagal laikrodžio rodyklę
+                top, right, bottom, left
+            */
+            /* margin: 100px 50px 70px 150px; */
+
+            /* Viršuje aprašytas šių keturių eilučių supaprastinimas */
+            /* margin-top: 100px;
+            margin-right: 50px;
+            margin-bottom: 70px;
+            margin-left: 150px; */
+
+            margin: 100px 50px 100px 50px;
+
+            /* 
+            Jeigu reikšmės vienodos dviejose ašyse 
+            galime supaprastinti iki dviejų reikšmių:
+            */
+            margin: 100px 50px;
+
+            /* 
+                Jeigu reikšmės vienodos iš kairės ir dešinės,
+                bet skiriasi iš viršaus ir apačios, 
+                naudojame tris reikšmes
+            */
+
+            margin: 100px 50px 150px 50px;
+
+            /* Supaprastinimas: */
+            margin: 100px 50px 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <div class="dezute"></div>
+    
+    <div class="dezute1"></div>
+
+    <div class="dezute2"></div>
+
+    <div class="dezute3"></div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis laborum accusantium nulla placeat dolore tempore commodi soluta consequatur cum sed sint, quaerat aut minima, sit nisi, sunt hic dolores doloribus aspernatur rem. Consequatur laborum, rerum nobis iure odio repellendus accusantium natus quo voluptates ratione explicabo, reiciendis voluptate iste ab debitis vel, iusto quos enim cupiditate laboriosam? Aut officiis optio soluta facilis odit deleniti quos cumque blanditiis nobis illum ipsum, eius tempora voluptas magni temporibus, obcaecati nihil libero voluptates aliquid molestiae placeat pariatur. At minima, dolorem nulla reprehenderit tempora eos, corrupti, dicta totam est natus aliquam consequuntur voluptates veritatis? Eveniet, enim!</p>
+
+    <div class="dezute4"></div>
+</body>
+</html>
