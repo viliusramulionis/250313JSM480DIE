@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaimo parduotuvė</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #EBEBEB;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            color: #222222;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 50px;
+            letter-spacing: 2px;
+            margin: 20px 0 15px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin: 15px 0 12px;
+        }
+        
+        
+        h3 {
+            font-size: 20px;
+            text-decoration: underline;
+            margin: 15px 0;
+        }
+
+        p {
+            line-height: 18px;
+            max-width: 521px;
+        }
+
+        .blokas {
+            background-color: white;
+        }
+
+        p:last-child {
+            padding-bottom: 5px;
+        }
+
+        img {
+            margin-bottom: 8px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .container {
+            /* Fiksuoto pločio nustatymas: */
+            /* width: 974px; */
+
+            /* Maksimalaus pločio nustatymas, jei šis skaičius telpa į ekrano plotį */
+            max-width: 974px;
+            /* Elemento su fiksuotu pločiu centravimas */
+            margin: 0 auto;
+            /* Toks pat aprašymas dvejomis eilutėmis */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* https://www.w3schools.com/cssref/css_ref_combinators.php */
+
+        h1 > div {
+            border: 8px solid yellow;
+        }
+
+        h1 > div > div {
+            border: 8px solid green;
+        }
+
+        h1 > div > div > div {
+            border: 8px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="blokas">
+            <h1>
+                <div>
+                    <div>
+                        <div>
+                            Kaimo parduotuvė
+                        </div>
+                    </div>
+                </div>
+            </h1>
+        </div>
+        <div class="blokas">
+            <h2>Prekės</h2>
+            <h3>Šokoladas</h3>
+
+            <p>Nunc feugiat lacus euismod felis tincidunt. Libero velit augue mi ornare vitae quam nulla. Nunc nisl sit vulputate massa hac faucibus semper in porta. Sagittis felis id lorem nascetur lectus ac. Massa risus venenatis nulla sagittis eget et est sed. Nec in neque tempor erat imperdiet eu. Amet sit cursus tellus blandit iaculis mus scelerisque. Lobortis pharetra vehicula et in enim. Aenean et commodo pharetra non eleifend scelerisque neque enim. Aenean sed cras diam condimentum nisl facilisis.</p>
+            
+            <h3>Traškučiai</h3>
+            <p>Est nisl massa accumsan arcu tellus. Purus maecenas aenean donec odio purus dolor. Amet lectus ut ut pulvinar et enim vitae accumsan. Morbi elementum magna vestibulum arcu ornare vel posuere ullamcorper. Ac accumsan aliquam dignissim gravida tristique habitasse. Dui vehicula nisi non feugiat proin nec cras risus suspendisse. Faucibus nulla leo consectetur est pretium vestibulum odio ullamcorper lobortis. Ullamcorper sit aliquet quis luctus semper. Et euismod venenatis nulla mauris est sit vitae rhoncus.</p>
+            
+            <h3>Vafliai</h3>
+            <p>Leo elementum hendrerit dignissim consequat dui arcu pharetra. Eu dictum sed sit suspendisse in tellus. Commodo viverra elementum convallis blandit nunc scelerisque. Egestas purus ac aenean ipsum. Odio et tristique nunc purus scelerisque lorem. Sed sed pharetra elementum nisi commodo iaculis nisl. Vitae urna convallis sed lectus elit tellus ut amet tincidunt.
+                Mi massa duis morbi mattis aenean tortor et fringilla eleifend. At tristique commodo sem suspendisse turpis vivamus arcu malesuada. Tristique.
+            </p>
+        </div>
+
+        <div class="blokas">
+            <h2>Galerija</h2>
+            <img src="nuotraukos/nuotrauka1.jpg" alt="">
+            <img src="nuotraukos/nuotrauka2.jpg" alt="">
+            <img src="nuotraukos/nuotrauka3.jpg" alt="">
+            <img src="nuotraukos/nuotrauka4.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
