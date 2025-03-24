@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        /* Visų elementų selektorius */
+        * {
+            box-sizing: border-box;   
+        }
+
+        .box {
+            width: 600px;
+            padding: 50px;
+        }
+
+        .box-half {
+            width: 50%;
+        }
+
+        .box-small {
+            width: 400px;
+            padding: 20px;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .cayan {
+            background-color: cyan;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .gap-1 {
+            margin-top: 50px;
+        }
+
+        .height-500 {
+            height: 500px;
+        }
+
+        .justify-center {
+            /* justify-content savybė skirta lygiuoti elementus horizontaliai */
+            /* flex-start (left) - lygiavimas į kairę */
+            /* flex-end (right) - lygiavimas į dešinę */
+            /* center - lygiavimas centre */
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-around {
+            justify-content: space-around;
+        }
+
+        .justify-evenly {
+            justify-content: space-evenly;
+        }
+
+        /* Verticalus lygiavimas */
+
+        .align-items-center {
+            /* align-items nurodo vertikalų lygiavimą */
+            /* Galimos reikšmės */
+            /* flex-start, flex-end, center, stretch (pagal nutylėjimą) */
+            align-items: center;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div class="box green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box purple">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+
+    <div class="flex gap-1">
+        <div class="box box-half green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-half orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+
+    <h2>Horizontalus lygiavimas</h2>
+
+    <div class="flex gap-1 justify-center">
+        <div class="box green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+
+    <div class="flex gap-1 justify-between">
+        <div class="box box-small green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+
+    <div class="flex gap-1 justify-around">
+        <div class="box box-small green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+
+    <div class="flex gap-1 justify-evenly">
+        <div class="box box-small green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+
+    <h2>Vertikalus lygiavimas</h2>
+
+    <div class="flex gap-1 height-500 align-items-center cayan">
+        <div class="box box-small green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box box-small black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+
+    <div class="flex gap-1 height-500 flex-wrap">
+        <div class="box green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box purple">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+        <div class="box orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quos. Perspiciatis suscipit nobis nihil illum, dolores quasi accusantium libero ducimus veritatis asperiores, blanditiis ratione ullam assumenda quas sint deleniti architecto amet! Distinctio facilis perspiciatis, voluptate soluta placeat facere vel deserunt laboriosam voluptatibus, quod cum! Rerum quis natus distinctio eos doloremque!</div>
+    </div>
+</body>
+</html>
