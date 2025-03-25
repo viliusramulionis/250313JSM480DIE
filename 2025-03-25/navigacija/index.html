@@ -4,8 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigacija</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(235, 235, 235);
+            font-family: "Rubik", sans-serif;
+        }
+
+        .container {
+            max-width: 1340px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.119);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* savybė gap sukuria tarpelius tarp elementų jei naudojama display savybė flex */
+            /* gap: 20px; */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 28px 20px;
+        }
+
+        nav li:hover a {
+            background-color: rgb(255, 146, 146);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 74px;
+            left: 0;
+            height: 300px;
+            width: 100%;
+            background-color: rgb(255, 146, 146);
+            display: none;
+        }
+
+        nav li:hover .submenu {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="">
+                    <img src="logo.svg" alt="" width="130">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="">Apie Mus</a></li>
+                        <li>
+                            <a href="">Prekės</a>
+                            <div class="submenu">
+                                
+                            </div>
+                        </li>
+                        <li><a href="">Kontaktai</a></li>
+                        <li><a href="">Istorija</a></li>
+                        <li><a href="">Nuorodos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 </body>
 </html>
