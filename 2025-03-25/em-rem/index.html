@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em ir Rem</title>
+    <style>
+        /* Pagal nutylėjimą naršyklės atvaizduojamas šrifto dydis yra 16px */
+
+        html {
+            font-size: 18px;
+        }
+        
+        /* 1rem = pagrindiniam puslapio elementui priskirtas šrifto dydis */
+        /* Pagal nutylėjimą (default) 1rem = 16px */
+        .box {
+            width: 20rem;
+            height: 20rem;
+            background-color: purple;
+        }
+
+        .small-box {
+            width: 10rem;
+            height: 10rem;
+            background-color: orange;
+        }
+
+        .circle {
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            background-color: aqua;
+        }
+
+        /* Jeigu rem paremta pagrindinio elemento šrifto dydžiu */
+        /* Em matas remiasi tėvinio šrifto dydžiu */
+        .tevas {
+            font-size: 30px;
+        }
+
+        /* 1em = 20px */
+
+        .em-box {
+            width: 20em;
+            height: 20em;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore praesentium non consequuntur atque quae numquam eum laborum reiciendis voluptatum rem. Minima fugit veritatis cumque doloribus maiores, distinctio dolore fugiat dolorem perspiciatis quod, eum animi nemo accusantium reiciendis sunt unde? Eius iusto incidunt eaque soluta natus ducimus provident quo. Rerum, quibusdam!</p>
+    <div class="box"></div>
+    <div class="small-box"></div>
+    <div class="circle"></div>
+
+    <div class="tevas">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga veritatis in voluptas iusto laudantium placeat et itaque perferendis architecto quis.</p>
+        <div class="em-box"></div>
+        <div class="small-box"></div>
+    </div>
+</body>
+</html>

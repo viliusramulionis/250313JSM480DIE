@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewport Width, ViewportHeight</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: purple;
+        }
+
+        .wide-box {
+            /* vw - Viewport Width ekrano plotis procentais */
+            /* vh - Viewport Height ekrano aukštis procentais */
+            width: 50vw;
+            height: 100vh;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="wide-box"></div>
+    </div>
+</body>
+</html>

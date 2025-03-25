@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f7ef;
+            font-family: "Rubik", sans-serif;
+        }
+
+        .zaidimas {
+            width: 500px;
+            background-color: #9b8a7c;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 22px;
+        }
+
+        .zaidimas div {
+            background-color: #bcab96;
+            width: 116px;
+            height: 116px;
+            border-radius: 12px;
+            font-size: 52px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fefefe;
+            border-top: 1px solid #8a7c69;
+            border-bottom: 1px solid #c5b5a4;
+        }
+
+        .zaidimas .two {
+            background-color: #ede3d9;
+            color: #756452;
+            border-top: 1px solid #f4eee8;
+            border-bottom: none;
+        }
+
+        .zaidimas .four {
+            background-color: #ead7b5;
+            color: #756452;
+            border-top: 1px solid #f1e5d1;
+            border-bottom: none;
+        }
+
+        .zaidimas .eight {
+            background: rgb(242,179,124);
+            background: linear-gradient(180deg, rgba(242,179,124,1) 0%, rgba(239,172,112,1) 80%);
+            border-top: 1px solid #f3c093;
+            border-bottom: none;
+        }
+
+        .zaidimas .sixteen {
+            background: #f69767;
+            background: linear-gradient(180deg, #f69767 0%, #f69767 80%);
+            border-top: 1px solid #f8aa82;
+            border-bottom: none;
+        }
+
+        .zaidimas .thirtytwo {
+            background: #f78167;
+            background: linear-gradient(180deg, #f78167 0%, #f47354 80%);
+            border-top: 1px solid #f79a84;
+            border-bottom: none;
+        }
+
+        .zaidimas .sixtyfour {
+            background: #f66a4a;
+            background: linear-gradient(180deg, #f66a4a 0%, #f35732 80%);
+            border-top: 1px solid #f8846b;
+            border-bottom: none;
+        }
+
+        .zaidimas .two,
+        .zaidimas .four,
+        .zaidimas .eight,
+        .zaidimas .sixteen,
+        .zaidimas .thirtytwo,
+        .zaidimas .sixtyfour {
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        /* #bcab96 */
+        /* #ede3d9 #756452 */
+        /* #ead7b5 #756452 */
+        /* #f1af76  */
+        /* #f59362 */
+        /* #f67f64 */
+        /* #f66645 */
+    </style>
+</head>
+<body>
+    <div class="zaidimas">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="two">2</div>
+        <div></div>
+        <div class="two">2</div>
+        <div class="eight">8</div>
+        <div class="sixteen">16</div>
+        <div class="eight">8</div>
+        <div></div>
+        <div class="sixteen">16</div>
+        <div class="sixtyfour">64</div>
+        <div class="four">4</div>
+        <div class="sixteen">16</div>
+        <div class="thirtytwo">32</div>
+        <div class="eight">8</div>
+    </div>
+
+    <div class="kvadratas"></div>
+</body>
+</html>
