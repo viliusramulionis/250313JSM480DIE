@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before ir After</title>
+    <style>
+        /* Pseudo elemento before sukūrimas */
+        .tekstas::before {
+            /* Kuomet kuriamas pseudo elementas, privaloma nurodyti savybę content */
+            content: "Tekstas: ";
+        }
+
+        .tekstas::after {
+            content: ", kaip sekasi?"
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            border: 2px solid black;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: black;
+        }
+
+        a::before {
+            /* content savybė gali būti tuščia, tačiau ją būtina priskirti */
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="tekstas">
+        Labas Pasauli
+    </div>
+    <a href="">Nuoroda</a>
+</body>
+</html>

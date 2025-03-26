@@ -1,0 +1,81 @@
+/* Šrifto importavimas */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #131417;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: white;
+}
+
+.container {
+    max-width: 675px;
+    margin: 150px auto 0;
+}
+
+.card {
+    background-color: #222225;
+    border-radius: 12px;
+    padding: 65px 72px;
+    position: relative;
+}
+
+h1 {
+    font-size: 48px;
+    letter-spacing: 0.42px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 100%;
+}
+
+p {
+    font-size: 15px;
+    line-height: 26px;
+    margin: 17px 0;
+}
+
+a {
+    display: block;
+    width: fit-content;
+    color: #F17965;
+    border: 2px solid #F17965;
+    border-radius: 12px;
+    line-height: 26px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    letter-spacing: -.4px;
+}
+
+.decorations img {
+    position: absolute;
+}
+
+.decorations img:nth-child(1) {
+    top: -109px;
+    left: -69px;
+}
+
+.decorations img:nth-child(2) {
+    bottom: -20px;
+    right: -27px;
+    z-index: 5;
+}
+
+.decorations img:nth-child(3) {
+    bottom: 30px;
+    right: -19px;
+    z-index: 4;
+}
+
+.decorations img:nth-child(4) {
+    bottom: -45px;
+    right: -7px;
+    z-index: 3;
+}
