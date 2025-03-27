@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .kompiuteris {
+            background-color: white;
+        }
+
+        .kompiuteris ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+            justify-content: center;
+        }
+
+        .telefonas {
+            background-color: black;
+            display: none;
+        }
+
+        .telefonas ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .telefonas li {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgb(41, 41, 41);
+        }
+
+        .telefonas li a {
+            color: white;
+        }
+
+        @media screen and (max-width: 1440px) {
+            body {
+                background-color: purple;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            /* Media query aprašyme selektorių kiekis nėra ribojamas */
+
+            body {
+                background-color: orange;
+            }
+
+            h1 {
+                color: black;
+            }
+        }
+
+
+        @media screen and (max-width: 768px) {
+            body {
+                background-color: red;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            body {
+                background-color: blue;
+            }
+
+            .telefonas {
+                display: block;
+            }
+
+            .kompiuteris {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ut.</h1>
+
+    <div class="kompiuteris">
+        <nav>
+            <ul>
+                <li><a href="#">Titulinis</a></li>
+                <li><a href="#">Apie Mus</a></li>
+                <li><a href="#">Kontaktai</a></li>
+                <li><a href="#">Galerija</a></li>
+                <li><a href="#">Spaudai</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="telefonas">
+        <ul>
+            <li><a href="#">Titulinis</a></li>
+            <li><a href="#">Galerija</a></li>
+            <li><a href="#">Spaudai</a></li>
+            <li><a href="#">Žemėlapis</a></li>
+            <li><a href="#">Programėlė</a></li>
+        </ul>
+    </div>
+</body>
+</html>

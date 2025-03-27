@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formos</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 425px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            padding: 5px 0;
+        }
+
+        /* Atributo selektorius žymimas [] */
+        /* input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="datetime-local"],
+        input[type="file"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid rgb(209, 209, 209);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.187);
+            padding: 10px 15px;
+            border-radius: 8px
+        } */
+
+        input:not([type="checkbox"]),
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid rgb(209, 209, 209);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.187);
+            padding: 10px 15px;
+            border-radius: 8px
+        }
+
+        button {
+            background-color: cyan;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+        }
+        
+        /* Norint stilizuoti tekstą patalpintą placeholder atribute */
+        input::placeholder {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Formos elementas apgliaubia visus formos laukelius -->
+        <form>
+            <!-- Norint sukurti laukelį kuriame vartotojas galėtų įvesti tekstą: -->
+            <!-- Input laukelis yra inline tipo elementas -->
+            <!-- <input type="text"> -->
+
+            <!-- Norint pažymėti laukelio reikšmę, naudojame label elementą -->
+            <div>
+                <label>Jūsų vardas:</label>
+                <input type="text" value="Vardenis">
+            </div>
+            <div>
+                <!-- Required atributas nurodo, jog reikšmė privalo būti įvesta į laukelį prieš perduodant duomenis -->
+                <label>Jūsų pavardė:</label>
+                <input type="text" placeholder="Pavardenis" required>
+            </div>
+            <div>
+                <!-- Laukelis skirtas įvesti skaičių: -->
+                <label>Įveskite namo numerį:</label>
+                <!-- Visi input elementai gali turėti value atributą -->
+                <input type="number" value="1">
+            </div>
+            <div>
+                <!-- Slaptažodžio laukelis -->
+                <label>Jūsų slaptažodis:</label>
+                <input type="password">
+            </div>
+            <div>
+                <label>Gimimo data:</label>
+                <input type="date">
+            </div>
+            <div>
+                <label>Planuojama vizito data ir laikas:</label>
+                <input type="datetime-local">
+            </div>
+            <div>
+                <label>Įkelkite nuotrauką:</label>
+                <input type="file">
+            </div>
+            <div>
+                <!-- Email tipas skirtas patikrinti ar įvesta reikšmė atitinka formatą -->
+                <!-- tel tipas atlieka tą patį su telefono validacija -->
+                <label>El. pašto adresas</label>
+                <input type="email" required>
+            </div>
+            <div style="display: flex;">
+                <input type="checkbox" id="sutikimas">
+                <label for="sutikimas">Sutinku su vartojimo sąlygomis</label>
+            </div>
+            <div>
+                <!-- Elementas skirtas įvesti tekstą atskirose eilutėse -->
+                <label>Komentaras</label>
+                <textarea></textarea>
+            </div>
+            <div>
+                <label>Pasirinkite temą</label>
+                <select>
+                    <option>Sąskaitos</option>
+                    <option>Sutartys</option>
+                    <option>Nusiskundimai</option>
+                </select>
+            </div>
+            <!-- Mygtukas skirtas formos duomenims perduoti -->
+            <button>Siųsti</button>
+        </form>
+    </div>
+</body>
+</html>
