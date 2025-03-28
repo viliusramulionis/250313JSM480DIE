@@ -11,6 +11,47 @@ body {
     font-weight: 400;
 }
 
+a {
+    color: #355B3E;
+}
+
+a:hover {
+    color: black;
+}
+
+input, button {
+    font-family: "Inter", sans-serif;
+}
+
+.button {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    background-color: #029664;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: block;
+    border: none;
+    width: 100%;
+    transition: all .1s ease-in-out;
+}
+
+.empty-button {
+    background-color: white;
+    color: #029664;
+    border: 1px solid #029664;
+}
+
+.button:hover {
+    background-color: black;
+}
+
+.empty-button:hover {
+    border: 1px solid black;
+    color: white;
+}
+
 /* 12 Stulpelių gridas - Pradžia */
 
 .row {
@@ -76,6 +117,9 @@ body {
 .container {
     max-width: 1296px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 100vh;
 }
 
 .login {
@@ -87,6 +131,9 @@ body {
 .login .illustration {
     background-color: #F5DBC4;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login .login-form {
@@ -125,6 +172,10 @@ body {
     line-height: 24px;
 }
 
+.login input:not([type="checkbox"])::placeholder {
+    color: #355B3E;
+}
+
 .login .line {
     margin-bottom: 24px;
 }
@@ -146,4 +197,108 @@ body {
 
 .login .checkbox input {
     margin: 0;
+}
+
+.login .buttons {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.login .other-methods {
+    margin-top: 56px;
+    color: #58745E;
+    display: flex;
+    gap: 24px;
+}
+
+.login .other-methods a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.login .mobile-logo {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .login .mobile-logo {
+        display: block;
+        background-color: #355B3E;
+        height: 112px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row {
+        /* flex-wrap: wrap; */
+        flex-direction: column-reverse;
+    }
+
+    .col-12,
+    .col-11,
+    .col-10,
+    .col-9,
+    .col-8,
+    .col-7,
+    .col-6,
+    .col-5,
+    .col-4,
+    .col-3,
+    .col-2,
+    .col-1 {
+        width: 100%;
+    }
+
+    .container {
+        display: block;
+        height: auto;
+    }
+
+    .login .illustration {
+        padding: 35px 0 30px;
+    }
+
+    .login .illustration img {
+        max-width: 230px;
+    }
+
+    .login {
+        border-radius: 0;
+    }
+
+    .login .login-form {
+        padding: 32px 24px 30px;
+    }
+
+    .login .logo {
+        display: none;
+    }
+
+    .login h2 {
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    .login label {
+        font-weight: 400;
+        color: #355B3E;
+    }
+
+    .login .other-methods {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .login .other-methods span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .login .other-methods a {
+        font-weight: 400;
+    }
 }
