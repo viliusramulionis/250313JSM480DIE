@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #355B3E;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+/* 12 Stulpelių gridas - Pradžia */
+
+.row {
+    display: flex;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.row > div {
+    padding: 0 12px;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-11 {
+    width: 91.66666666666667%;
+}
+
+.col-10 {
+    width: 83.33333333333333%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-8 {
+    width: 66.66666666666667%;
+}
+
+.col-7 {
+    width: 58.33333333333333%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-5 {
+    width: 41.66666666666667%;
+}
+
+.col-4 {
+    width: 33.33333333%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-2 {
+    width: 16.666666%;
+}
+
+.col-1 {
+    width: 8.333333333%;
+}
+
+/* Pabaiga */
+
+.container {
+    max-width: 1296px;
+    margin: 0 auto;
+}
+
+.login {
+    background-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.login .illustration {
+    background-color: #F5DBC4;
+    height: 100%;
+}
+
+.login .login-form {
+    padding: 40px 64px 66px;
+}
+
+.login h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;  
+    color: #355B3E;
+    margin: 55px 0 0;
+}
+
+.login p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #58745E;
+    margin: 16px 0 32px;
+}
+
+.login label {
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    margin: 0 0 8px;
+}
+
+.login input:not([type="checkbox"]) {
+    border: 1px solid #B8D6BF;
+    width: 100%;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.login .line {
+    margin-bottom: 24px;
+}
+
+.login .remember-me {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login .checkbox label {
+    margin: 0;
+}
+
+.login .checkbox input {
+    margin: 0;
+}

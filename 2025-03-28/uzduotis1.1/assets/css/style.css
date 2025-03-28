@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+input, textarea, select, button {
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: #2563EB;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+.container {
+    width: 322px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login h2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.login h3 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #535862;
+    margin: 12px 0 32px;
+}
+
+.login .line {
+    margin-bottom: 20px;
+}
+
+.login label {
+    display: block;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 0 8px;
+}
+
+/* .login input[type="email"],
+.login input[type="password"] {
+    
+} */
+.login input:not([type="checkbox"]) {
+    border: 1px solid #00000014;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 5px 8px;
+    box-shadow: 0 1px 2px #00000012;
+}
+
+/* Kai laukelyje vedamas tekstas */
+/* .login input:not([type="checkbox"]):focus {
+    outline: 2px solid #3B82F6;
+} */
+
+.login input:not([type="checkbox"]):focus-visible {
+    border: 1px solid #3B82F6;
+    outline: 3px solid #3B82F633;
+}
+
+.login .remember-me {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login .checkbox {
+    display: flex;
+    gap: 8px;
+}
+
+.login .checkbox label {
+    margin: 0;
+}
+
+.login .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login .buttons .button {
+    display: block;
+    width: 100%;
+    background-color: #27272A;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid #18181B;
+    box-shadow: inset 0 1px 0 0 #474747;
+    padding: 7px 12px;
+}
+
+.login .buttons .google-button {
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 7px 12px;
+    border: 1px solid #00000014;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.login .buttons .google-button::before {
+    content: "";
+    background: url(../images/google.svg) no-repeat center center;
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+.login .sign-up {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.login .deco {
+    margin-bottom: 48px;
+}
+
+.login .deco span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #00000014;
+    margin: 0 auto;
+    border-radius: 6px;
+    position: relative;
+}
+
+.login .deco span::before {
+    content: "";
+    background-color: #09090b;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+}
+
+.login .deco span::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: block;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}

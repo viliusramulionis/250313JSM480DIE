@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 column grid</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .box {
+            background-color: rgb(180, 180, 180);
+            padding: 15px 0;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .row > div {
+            padding: 0 10px;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        .col-11 {
+            width: 91.66666666666667%;
+        }
+
+        .col-10 {
+            width: 83.33333333333333%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-8 {
+            width: 66.66666666666667%;
+        }
+
+        .col-7 {
+            width: 58.33333333333333%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-5 {
+            width: 41.66666666666667%;
+        }
+
+        .col-4 {
+            width: 33.33333333%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-2 {
+            width: 16.666666%;
+        }
+
+        .col-1 {
+            width: 8.333333333%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="row">
+            <div class="col-12">
+                <div class="box">12</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="box">6</div>
+            </div>
+            <div class="col-6">
+                <div class="box">6</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="box">4</div>
+            </div>
+            <div class="col-4">
+                <div class="box">4</div>
+            </div>
+            <div class="col-4">
+                <div class="box">4</div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-3">
+                <div class="box">3</div>
+            </div>
+            <div class="col-3">
+                <div class="box">3</div>
+            </div>
+            <div class="col-3">
+                <div class="box">3</div>
+            </div>
+            <div class="col-3">
+                <div class="box">3</div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-11">
+                <div class="box">11</div>
+            </div>
+            <div class="col-1">
+                <div class="box">1</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <div class="box">10</div>
+            </div>
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                <div class="box">9</div>
+            </div>
+            <div class="col-3">
+                <div class="box">3</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="box">8</div>
+            </div>
+            <div class="col-4">
+                <div class="box">4</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <div class="box">7</div>
+            </div>
+            <div class="col-5">
+                <div class="box">5</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <div class="box">2</div>
+            </div>
+            <div class="col-4">
+                <div class="box">4</div>
+            </div>
+            <div class="col-6">
+                <div class="box">6</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
