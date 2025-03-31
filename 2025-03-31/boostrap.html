@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Kintamųjų reikšmių perrašymas */
+        .btn-primary {
+            --bs-btn-bg: #ff00bf;
+            --bs-btn-border-color: #ff00bf;
+            --bs-btn-hover-bg: black;
+            --bs-btn-hover-border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col">
+                <h3>Pirmas stulpelis</h3>
+            </div>
+            <div class="col">
+                <h3>Antras stulpelis</h3>
+            </div>
+            <div class="col">
+                <h3>Trečias stulpelis</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3>Pirmas stulpelis</h3>
+            </div>
+            <div class="col-12 col-md-3">
+                <h3>Antras stulpelis</h3>
+            </div>
+            <div class="col-12 col-md-3">
+                <h3>Trečias stulpelis</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Container -->
+    <div class="container pt-5">
+        <h2>Container</h2>
+        .container
+    </div>
+    <div class="container-md">
+        .container-md
+    </div>
+    <div class="container-lg">
+        .container-lg
+    </div>
+    </div>
+    <div class="container-xl">
+        .container-xl
+    </div>
+    <div class="container-xxl">
+        .container-xxl
+    </div>
+
+    <div class="container pt-5">
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
+            <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
+            <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
+            <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
+            <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
+        </ul>
+    </div>
+
+    <div class="container pt-3">
+        <h2>Display</h2>
+        <div class="d-flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Formos</h2>
+        <div class="mb-3">
+            <label class="form-label">Vardas:</label>
+            <input type="text" class="form-control" placeholder="Įveskite savo vardą">
+        </div>
+        <div class="mb-3">
+            <label>Pasirinkite temą</label>
+            <select class="form-select"> 
+                <option>Sąskaitos</option>
+                <option>Mokėjimai</option>
+                <option>Nusiskundimai</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Siųsti</button>
+        </div>
+        <div class="mb-3 input-group">
+            <input type="text" class="form-control" placeholder="Įveskite adresą">
+            <button class="btn btn-secondary">Tikrinti</button>
+        </div>
+    </div>
+</body>
+</html>
