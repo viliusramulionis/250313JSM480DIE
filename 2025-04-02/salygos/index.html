@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sąlygos</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+        }
+
+        // Funkcijai iššaukti - random(0, 10), tarp skliaustelių įrašome reikšmes nuo iki (pvz. nuo nulio iki dešimt)
+
+        let rodyti = true; // true arba false
+
+        console.log(typeof rodyti)
+
+        console.log(rodyti)
+
+        // Trys lygybės ženklai lygina reikšmę ir duomens tipą
+        console.log(10 === 10);
+        
+        console.log("10" === 10);
+
+        // Du lygybės ženklai tikrina tik reikšmę (nerekomenduotinas variantas)
+        console.log("10" == 10);
+
+        if(10 === 10) {
+            // Kas turi būti atlikta jei sąlyga yra teigiama
+        } else {
+            // Jeigu salyga neigiama, aprašomi veiksmai
+            // Esle blokas nėra privalomas
+        }
+
+        let simbolis = "k";
+
+        if(simbolis === "k") {
+            console.log("Tai yra raidė kurios tikėjomės");
+        } else {
+            console.log(`Duota raidė nėra "k"`);
+        }
+
+        let pirmasSkaicius = 12;
+        let antrasSkaicius = 15;
+
+        if(pirmasSkaicius > antrasSkaicius) {
+            console.log("Pirmas skaicius yra didesnis nei antras");
+            rodyti = false;
+        } else {
+            console.log("Antras skaicius yra didesnis nei pirmas");
+            rodyti = true;
+        }
+
+        if(rodyti) {
+            console.log('Veiks');
+        }
+
+        pirmasSkaicius = random(5, 25);
+        antrasSkaicius = random(4, 18);
+
+        console.log(pirmasSkaicius, antrasSkaicius);
+
+        if(pirmasSkaicius > antrasSkaicius) {
+            console.log("Pirmas skaicius yra didesnis nei antras");
+        }
+
+        if(pirmasSkaicius >= antrasSkaicius) {
+            console.log("Pirmas skaicius yra didesnis arba lygus antram");
+        }
+
+        if(antrasSkaicius <= pirmasSkaicius) {
+            console.log("Antras skaicius yra mazesnis arba lygus pirmam");
+        }
+
+        if(antrasSkaicius < pirmasSkaicius) {
+            console.log("Antras skaicius yra mazesnis nei pirmas");
+        }
+
+        if(pirmasSkaicius === antrasSkaicius) {
+            console.log("Pirmas skaicius yra lygus antram");
+        } 
+
+        if(pirmasSkaicius !== antrasSkaicius) {
+            console.log("Pirmas skaicius yra nelygus antram");
+        }
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+console.log("Pasisveikinimas iš išorinio failo")
