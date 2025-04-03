@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungtinės sąlygos</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        let pirmas = 8;
+        let antras = 15;
+
+        // if(pirmas > antras) {
+        //     console.log('Pirmas yra didesnis');
+        // } else {
+        //     if(pirmas === antras) {
+        //         console.log('Skaičiai yra lygūs')
+        //     } else {
+        //         console.log('Antras yra didesnis');
+        //     }
+        // }
+
+        // Else if komanda
+
+        if(pirmas > antras) {
+            console.log('Pirmas yra didesnis');
+        } else if(pirmas === antras) {
+            console.log('Skaičiai yra lygūs')
+        } else {
+            console.log('Antras yra didesnis');
+        }
+        
+
+        // Else if pritaikymas jei norime atspausdinti tekstą iškritus skaičiui nuo nulio iki keturių.
+        // Iškritus kitam skaičiui atvaizduojamas tekstas "Skaičius yra nežinomas"
+
+        let skaicius = random(0, 10);
+
+        if(skaicius === 0) {
+            console.log('Skaičius yra nulis');
+        } else if (skaicius === 1) {
+            console.log('Skaičius yra vienas');
+        } else if(skaicius === 2) {
+            console.log('Skaičius yra du');
+        } else if(skaicius === 3) {
+            console.log('Skaičius yra trys');
+        } else if(skaicius === 4) {
+            console.log('Skaičius yra keturi');
+        } else {
+            console.log('Skaičius yra nežinomas');
+        }
+
+        // OR Sąlygos
+        // OR operatorius žymimas ||
+
+        if(false || false || true || false) {
+            console.log('Sąlyga teigiama');
+        }
+
+        if(skaicius === 0 || skaicius === 1 || skaicius === 2 || skaicius === 3 || skaicius === 4) {
+            console.log('Skaičius yra tinkamas');
+        } else {
+            console.log('SKaičius yra netinkamas');
+        }
+
+        // AND Operatorius
+        // Žymimas &&
+
+        if(true && true && true && true) {
+            console.log('And operatoriaus sąlyga teigiama');
+        }
+
+        // Jeigu skaičius yra didesnis nei 2 ir mažesnis nei 8, tuomet atspausdinkite žodį BINGO
+
+        console.log('Skaičius:', skaicius);
+
+        if(skaicius > 2 && skaicius < 8) {
+            console.log('BINGO!!!');
+        }
+
+        // NOT operatorius
+        let rodyti = false;
+
+        // if(rodyti === false) {
+        //     console.log('Rodome duomenis');
+        // }
+
+        if(!rodyti) {
+            console.log('Rodome duomenis');
+        }
+
+        // ! nurodo, jog apkeičiame boolean reikšmę (iš true į false ir atvirščiai)
+        console.log(!true);
+    </script>
+</body>
+</html>

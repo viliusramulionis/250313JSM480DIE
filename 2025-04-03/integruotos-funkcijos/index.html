@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integruotos funkcijos</title>
+</head>
+<body>
+    <script>
+        // if(0 / 0 === NaN) {
+        //     console.log('Not A Number');
+        // }
+
+        if(isNaN(0 / 0)) {
+            console.log('Ne Skaičius');
+        }
+        
+        if(!isFinite(5 / 0)) {
+            console.log('Begalybė');
+        }
+
+        // Norint konvertuoti stringe patalpintą skaičių
+        let skaicius = "2025";
+
+        console.log(parseInt(skaicius) + 15);
+        
+        // Norint konvertuoti stringe esantį skaičių su liekana
+        
+        skaicius = "19.99";
+
+        console.log(parseFloat(skaicius));
+
+        // ESM Pakeitimų atsiradęs variantas prirašant pliusą prie kintamojo:
+        // console.log(+skaicius);
+
+
+        // STRINGŲ APDOROJIMO METODAI:
+
+        let stringas = "Labas Pasauli";
+
+        // Jeigu norime patikrinti ar stringe yra žodis arba simbolis:
+        if(stringas.includes("Labas")) {
+            console.log("Stringe patalpintas žodis Labas");
+        }
+
+        // Jeigu stringe norime pakeisti simbolius
+        // Nemodifikuoja originalaus stringo!
+        // Pakeičia tik patį pirmą surastą simbolį ar žodį
+        console.log(stringas.replace("Labas", "Viso"));
+        console.log(stringas);
+
+        stringas = "Javascript operators are used to perform different types of mathematical and logical computations.";
+
+        console.log(stringas.replace(" ", "-"));
+
+        // Pakeičia visus simbolius ar žodžius stringe
+        console.log(stringas.replaceAll(" ", "-"));
+
+        // Pakeičia visas raides į didžiąsias
+        console.log(stringas.toUpperCase());
+
+        // Pakeičia visas raides į mažąsias
+        console.log(stringas.toLowerCase());
+
+        // Norint susirasti stringo ilgį
+        console.log(stringas.length)
+    </script>
+</body>
+</html>
