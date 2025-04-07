@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stringai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę 
+        // kaip stringus (Jonas Jonaitis). Atspausdinti trumpesnį stringą.
+        // Pvz:
+        // Johnny Depp
+        // Rezultatas: Depp
+
+        console.log('PIRMA UŽDUOTIS');
+
+        let vardas = 'Angelina';
+        let pavarde = 'Jolie';
+
+        if(vardas.length > pavarde.length) {
+            console.log(pavarde);
+        } else if(vardas.length === pavarde.length) {
+            console.log('Vardas ir pavarde vienodo ilgio');
+        } else {
+            console.log(vardas);
+        }
+
+        // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus 
+        // vardą ir pavardę kaip stringus. Vardą atspausdinti 
+        // tik didžiosiom raidėm, o pavardę tik mažosioms.
+        // Rezultatas: JOHNNY depp
+
+        console.log('ANTRA UŽDUOTIS');
+
+        console.log(vardas.toUpperCase(), pavarde.toLowerCase());
+
+        // Sukurti du kintamuosius. Jiems priskirti savo mylimo 
+        // aktoriaus vardą ir pavardę kaip stringus. 
+        // Sukurti trečią kintamąjį ir jam priskirti stringą, 
+        // sudarytą iš pirmų vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+        // Rezultatas: JD
+
+        console.log('TREČIA UŽDUOTIS');
+
+        console.log('Inicialai:', vardas[0] + pavarde[0]);
+
+        // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus 
+        // vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį 
+        // ir jam priskirti stringą, sudarytą iš trijų paskutinių 
+        // vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+        // Rezultatas: NNYEPP
+
+        console.log('KETVIRTA UŽDUOTIS');
+
+        console.log(
+            vardas[vardas.length - 3] + 
+            vardas[vardas.length - 2] + 
+            vardas[vardas.length - 1] +
+            pavarde[pavarde.length - 3] +
+            pavarde[pavarde.length - 2] +
+            pavarde[pavarde.length - 1]
+        );
+
+        console.log(vardas.slice(-3) + pavarde.slice(-3));
+
+
+        // Sukurti kintamąjį su stringu: “An American in Paris”. 
+        // Jame visas “a” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”. 
+        // Rezultatą atspausdinti.
+        // Rezultatas: *n *meric*n in P*ris
+
+        console.log('PENKTA UŽDUOTIS');
+
+        let stringas = "An American in Paris";
+
+        // let rezultatas = stringas.replaceAll("a", "*");
+        // rezultatas = rezultatas.replaceAll("A", "*");
+
+        // console.log(rezultatas);
+
+        // Chaining
+        // console.log(stringas.replaceAll("a", "*").replaceAll("A", "*"));
+
+        // Du pasviri brūkšniai simbolizuoja Regular Expression (Regex)
+        console.log(stringas.replaceAll(/[Aa]/g, "*"));
+
+        // i raidė regex užklausos pabaigoje reiškia mažųjų ir didžiųjų raidžių ignoravimą
+        // case insensitive
+        console.log(stringas.replaceAll(/[a]/gi, "*"));
+
+        // Sukurti kintamąjį su stringu: “An American in Paris”.
+        // Suskaičiuoti visas “a” (didžiąsias ir mažąsias) raides. Rezultatą atspausdinti.
+        // Rezultatas: 4
+
+        console.log('ŠEŠTA UŽDUOTIS');
+
+        console.log(stringas.length - stringas.replaceAll(/[a]/gi, "").length);
+
+        // Sukurti kintamąjį su stringu: “An American in Paris”. 
+        // Jame ištrinti visas balses. Rezultatą atspausdinti. 
+        // Kodą pakartoti su stringais: “Breakfast at Tiffany's”, 
+        // “2001: A Space Odyssey” ir “It's a Wonderful Life”.
+
+        console.log(stringas.replaceAll(/[aeiyou]/gi, ""));
+
+        // Stringe, kurį generuoja toks kodas: 
+        // `Star Wars: Episode ${random(0,5)} ${random(1,9)} - A New Hope`; 
+        // Surasti ir atspausdinti epizodo numerį.
+        // Rezultato pvz: 5 9
+
+        console.log('SEPTINTA UŽDUOTIS');
+
+        stringas = `Star Wars: Episode ${random(0,5)} ${random(1,9)} - A New Hope`;
+
+        console.log(stringas);
+
+        console.log(stringas[19], stringas[21]);
+
+        console.log('AŠTUNTA UŽDUOTIS');
+
+        // Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. 
+        // Stringo ilgis 3 simboliai.
+
+        let raides = 'abcdefghijklmnopqrstuvwxyz';
+
+        console.log(
+            raides[random(0, raides.length - 1)] +
+            raides[random(0, raides.length - 1)] +
+            raides[random(0, raides.length - 1)] 
+        );
+
+        console.log(
+            String.fromCharCode(random(97, 122), random(97, 122), random(97, 122))
+        )
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Kintamųjų deklaravimas vienoje eilutėje:
+        let pirmas, antras, trecias, ketvirtas, didziausias, 
+            maziausias, nuliai, vienetai, dvejetai, rezultatas, kiekis, nuolaida,
+            suma;
+
+        // Sukurkite tris kintamuosius ir jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. 
+        // Raskite ir atspausdinkite kintamąjį turintį vidurinę reikšmę. 
+        // Pvz duoti skaičiai: 14, 5, 25. Vidurinis skaičius: 14
+
+        console.log('SEPTINTA UŽDUOTIS:');
+
+        pirmas = random(0, 25);
+        antras = random(0, 25);
+        trecias = random(0, 25);
+
+        console.log('Skaičiai:', pirmas, antras, trecias);
+
+        didziausias = pirmas;
+        maziausias = pirmas;
+
+        if(antras > didziausias) {
+            didziausias = antras;
+        }
+
+        if(trecias > didziausias) {
+            didziausias = trecias;
+        }
+
+        if(antras < maziausias) {
+            maziausias = antras;
+        }
+
+        if(trecias < maziausias) {
+            maziausias = trecias;
+        }
+
+        console.log('Didžiausias skaičius:', didziausias);
+        console.log('Mažiausias skaičius:', maziausias);
+
+        console.log('Vidurinis skaičius:', pirmas + antras + trecias - didziausias - maziausias);
+        
+        // Sukurkite keturis kintamuosius su reikšmėmis nuo 0 iki 2. 
+        // Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+        // Patikrinkite kodo veikimą su random() funkcija. 
+
+        console.log('AŠTUNTA UŽDUOTIS:');
+
+        pirmas = random(0, 2);
+        antras = random(0, 2);
+        trecias = random(0, 2);
+        ketvirtas = random(0, 2);
+
+        nuliai = 0;
+        vienetai = 0;
+        dvejetai = 0;
+
+        if(pirmas === 0) {
+            // nuliai = nuliai + 1;
+            // nuliai += 1;
+            nuliai++;
+        }
+
+        if(antras === 0) 
+            nuliai++;
+
+        if(trecias === 0) 
+            nuliai++;
+
+        if(ketvirtas === 0) 
+            nuliai++;
+
+        if(pirmas === 1) 
+            vienetai++;
+
+        if(antras === 1) 
+            vienetai++;
+
+        if(trecias === 1)
+            vienetai++;
+
+        if(ketvirtas === 1) 
+            vienetai++;
+
+        if(pirmas === 2) 
+            dvejetai++;
+
+        if(antras === 2) 
+            dvejetai++;
+
+        if(trecias === 2) 
+            dvejetai++;
+        
+        if(ketvirtas === 2) 
+            dvejetai++;
+        
+        console.log('Gauti skaičiai:', pirmas, antras, trecias, ketvirtas);
+        console.log('Nuliai:', nuliai, 'Vienetai:', vienetai, 'Dvejetai:', dvejetai);
+
+        // Sukurkite ir atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti 
+        //  laužtiniuose skliaustuose [], 0 -  (), didesni už 0 {}.
+
+        console.log('DEVINTA UŽDUOTIS:');
+
+        pirmas = random(-10, 10);
+        antras = random(-10, 10);
+        trecias = random(-10, 10);
+
+        console.log('Gauti skaičiai:', pirmas, antras, trecias);
+
+        rezultatas = '';
+
+        if(pirmas < 0) {
+            rezultatas += `[${pirmas}], `
+        }
+
+        if(pirmas === 0) {
+            rezultatas += `(${pirmas}), `
+        }
+
+        if(pirmas > 0) {
+            rezultatas += `{${pirmas}}, `
+        }
+
+        if(antras < 0) {
+            rezultatas += `[${antras}], `
+        }
+
+        if(antras === 0) {
+            rezultatas += `(${antras}), `
+        }
+
+        if(antras > 0) {
+            rezultatas += `{${antras}}, `
+        }
+
+        if(trecias < 0) {
+            rezultatas += `[${trecias}], `
+        }
+
+        if(trecias === 0) {
+            rezultatas += `(${trecias}), `
+        }
+
+        if(trecias > 0) {
+            rezultatas += `{${trecias}}, `
+        }
+
+        console.log(rezultatas);
+
+        // Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip 1000 vienetų taikoma 3 % nuolaida, 
+        // daugiau kaip 2000 vienetų- 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą 
+        // ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama.
+        // Žvakių kiekį generuokite random() funkcija nuo 5 iki 3000.
+
+        console.log('DEŠIMTA UŽDUOTIS:');
+
+        kiekis = random(5, 3000);
+        nuolaida = 0;
+
+        if(kiekis > 1000) {
+            nuolaida = kiekis * 0.03;
+        }
+
+        if(kiekis > 2000) {
+            nuolaida = kiekis * 0.04;
+        }
+
+        console.log('Perkama žvakių:', kiekis, 'Galutinė kaina:', (kiekis - nuolaida).toFixed(2));
+
+
+        // Naudokite funkcija random() Sukurkite tris kintamuosius su atsitiktinėmis reikšmėmis nuo 0 iki 100. 
+        // Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, 
+        // kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. 
+        // Rezultatus apvalinkite iki sveiko skaičiaus.
+
+        pirmas = random(0, 100);
+        antras = random(0, 100);
+        trecias = random(0, 100);
+
+        console.log('Gauti skaičiai:', pirmas, antras, trecias);
+        console.log('Vidurkis:', (pirmas + antras + trecias) / 3);
+
+        suma = 0;
+        kiekis = 0;
+
+        if(pirmas >= 10 && pirmas <= 90) {
+            suma += pirmas;
+            kiekis++;
+        }
+
+        if(antras >= 10 && antras <= 90) {
+            suma += antras;
+            kiekis++;
+        }
+
+        if(trecias >= 10 && trecias <= 90) {
+            suma += trecias;
+            kiekis++;
+        }
+
+        if(kiekis > 0) {
+            console.log('Vidurkis atmetus skaičius', suma / kiekis);
+        }
+    </script>
+</body>
+</html>
