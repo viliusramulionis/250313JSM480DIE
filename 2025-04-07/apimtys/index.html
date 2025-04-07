@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apimtys (scopes)</title>
+</head>
+<body>
+    <script>
+        // Apimtys Javascript kalboje yra trys:
+        // Global
+        // Block
+        // Function
+        
+        // Globalioje apimtyje deklaruotas kintamasis:
+        let pirmas = 15;
+
+        console.log(pirmas);
+
+        // Block scope (Blokinė apimtis) - tai kas yra įvardinta tarp riestinių skliaustų
+
+        {
+            // Kai kintamasis yra deklaruojamas tarp 
+            // riestinių skliaustų jis yra prieinamas tik tarp jų
+
+            let antras = 25;
+            console.log('Kintamojo antras reikšmė:', antras);
+        }
+
+        // KLAIDA: Uncaught ReferenceError: antras is not defined
+        // console.log('Kintamojo antras reikšmė:', antras);
+
+        if(true) {
+            let skaicius = 99;
+            console.log(skaicius);
+        }
+
+        // console.log(skaicius);
+
+        {
+            // Blokinė apimtis negalio var ir be deklaravimo būdo deklaruotiems kintamiesiems.
+            var didelisSkaicius = 500000;
+        }
+
+        console.log(didelisSkaicius);
+    </script>
+</body>
+</html>

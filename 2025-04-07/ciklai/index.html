@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciklai</title>
+</head>
+<body>
+    <script>
+        // Ciklai gali būti:
+        // Inkrementiniai (while, for)
+        // Rekursiniai (funkcijos)
+
+
+        // WHILE CIKLO APRAŠYMAS
+        // while(kondicija) {
+        //     Atliekami veiksmai
+        // }
+
+        // BEGALINIS CIKLIS:
+
+        // while(true) {
+        //     console.log('Ciklas sukasi');
+        // }
+
+        // PIRMASIS WHILE CIKLAS
+
+        // let i = 0; 
+
+        // while(i < 10) {
+        //     // Vienas atliekamas veiksmas yra vadinamas iteracija (iteration)
+        //     console.log(i);
+
+        //     i++;
+        // }
+
+        // TOKIE PATYS VEIKSMAI APRAŠOMI RANKINIU BŪDU
+
+        // let i = 0;
+
+        // console.log(0);
+        // console.log(1);
+        // console.log(2);
+        // console.log(3);
+        // console.log(4);
+        // console.log(5);
+        // console.log(6);
+        // console.log(7);
+        // console.log(8);
+        // console.log(9);
+        
+
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sugeneruokite keturis skaičius su reikšmėmis nuo 0 iki 2. 
+        // Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+        let i = 0;
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        while(i < 50000) {
+            let skaicius = random(0, 2);
+
+            if(skaicius === 0) {
+                nuliai++;
+            }
+
+            if(skaicius === 1) {
+                vienetai++;
+            }
+
+            if(skaicius === 2) {
+                dvejetai++;
+            }
+
+            i++;
+        }
+
+        console.log('Nuliai:', nuliai, 'Vienetai:', vienetai, 'Dvejetai:', dvejetai);
+        
+
+        // Sukurkite ciklą kuris suktusi tol iki kol iškris skaičius vienas.
+        // Skaičių generuokite random() funkcija, nurodydamas reikšmes nuo 0 iki 500000
+        // Suskaičiuokite kiek sukimų prireikė.
+
+        let veikia = true;
+        let sukimai = 0;
+
+        while(veikia) { 
+            let skaicius = random(0, 500000); 
+
+            if(skaicius === 0) {
+                veikia = false;
+            }
+
+            sukimai++; 
+
+            // Pabaigoje deklaruoti kintamieji yra sunaikinami.
+        }
+
+        console.log('Prireikė sukimų:', sukimai);
+
+
+        // Keli While ciklai:
+
+        // let x = 0; 
+
+        // while(x < 10) {
+        //     // Vienas atliekamas veiksmas yra vadinamas iteracija (iteration)
+        //     console.log(x);
+
+        //     x++;
+        // }
+
+        // x = 0; 
+
+        // while(x < 10) {
+        //     // Vienas atliekamas veiksmas yra vadinamas iteracija (iteration)
+        //     console.log(x);
+
+        //     x++;
+        // }
+
+        // FOR CIKLAS
+        // For ciklas yra skirtas fiksuotam iteracijų kiekiui aprašyti
+        // Su while ciklo pagalba, galima lengvai paleisti begalinį ciklą
+
+        console.log('PIRMAS FOR CIKLO PAVYZDYS');
+
+        for(let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        console.log('ANTRAS FOR CIKLO PAVYZDYS');
+
+        // Spausdiname kas antrą skaičių iki 10
+
+        for(let i = 0; i < 10; i += 2) {
+            console.log(i);
+        }
+
+        console.log('REMAINDER OPERATORIAUS PAVYZDYS');
+
+        for(let i = 0; i < 10; i++) {
+            if(i % 2 === 0) {
+                console.log(i);
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>
