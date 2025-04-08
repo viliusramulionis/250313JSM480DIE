@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+
+        let heading = 'font-weight: bold; font-size: 22px;';
+        // Sukurkite ciklą kuris atspausdintų 10 kartų žodį “labas”.
+
+        console.log('%cPIRMA UŽDUOTIS', heading);
+
+        for(let i = 0; i < 10; i++) {
+            console.log("Labas");
+        }
+
+        // Sukurkite ciklą kuris atspausdintų skaičius nuo 0 iki 9.
+
+        console.log('%cANTRA UŽDUOTIS', heading);
+
+        for(let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        console.log('%cTREČIA UŽDUOTIS', heading);
+
+        // Atspausdinkite kas antrą skaičių nuo 10 iki 50 (lyginius skaičius);
+        
+        // for(let i = 10; i <= 50; i++) {
+        //     if(i % 2 == 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        for(let i = 10; i <= 50; i += 2) {
+            console.log(i);
+        }
+
+        // Atspausdinkite kas antrą skaičių nuo 10 iki 50 (lyginius skaičius). 
+        // Jei skaičius dalinasi iš 10 be liekanos jo nespausdinkite. 
+
+        console.log('%cKETVIRTA UŽDUOTIS', heading);
+
+        for(let i = 10; i <= 50; i += 2) {
+            if(i % 10 !== 0) {
+                console.log(i);
+            }
+        }
+
+        // Sukurkite ciklą kuris suktųsi nuo 0 iki 20. 
+        // Suskaičiuokite, kiek kartų kintamasis i turėjo porinę reikšmę;
+
+        console.log('%cPENKTA UŽDUOTIS', heading);
+
+        let skaiciuotuvas = 0;
+
+        for(let i = 0; i <= 20; i += 2) {
+            skaiciuotuvas++;
+        }
+        
+        console.log(`Kintamasis i porinę reikšmę turėjo ${skaiciuotuvas} kartų`);
+
+        // Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite 
+        // juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  
+        // Skaičiai didesni nei 275 turi būti atspausdinti skliausteliuose” [ ] “.
+
+        console.log('%cŠEŠTA UŽDUOTIS', heading);
+
+        let rezultatas = '';
+        
+        skaiciuotuvas = 0;
+
+        for(let i = 0; i < 300; i++) {
+            let skaicius = random(0, 300);
+
+            if(skaicius > 275) {
+                rezultatas += `[${skaicius}] `;
+            } else {
+                rezultatas += skaicius + ' ';
+            }
+
+            if(skaicius > 150) {
+                skaiciuotuvas++;
+            }
+        }
+
+        console.log(rezultatas);
+
+        console.log(`Skaičių didesnių nei 150 yra: ${skaiciuotuvas}`);
+
+        console.log('%cKVADRATAS', heading);
+
+        //Nupieškite kvadratą iš “*”, kurio kraštines sudaro 25 “*” simboliai.
+
+        let dydis = 3;
+
+        for(let y = 0; y < dydis; y++) {
+            let eilute = '';
+
+            for(let x = 0; x < dydis; x++) {
+                eilute += '*';
+            }
+
+            console.log(eilute);
+        }
+
+        console.log('%cKVADRATAS VIENU CIKLU', heading);
+
+        rezultatas = '';
+
+        // \n - new line (naujos eilutės iniciavimas)
+
+        for(let i = 1; i <= dydis * dydis; i++) {
+            if(i % dydis === 0) {
+                rezultatas += '*\n';
+            } else {
+                rezultatas += '*';
+            }
+        }
+
+        console.log(rezultatas);
+
+
+    </script>
+</body>
+</html>
