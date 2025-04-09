@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+        // Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. 
+        // Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti.
+
+        let heading = 'font-weight: bold; font-size: 22px;';
+
+        console.log('%cSEPTINTA UŽDUOTIS', heading);
+
+        let rezultatas = "";
+        let kiekis = 3000;
+        let daliklis = 77;
+
+        for(let i = 1; i <= kiekis; i++) {
+            if(i % daliklis === 0) {
+                if(i === kiekis - kiekis % daliklis) {
+                    rezultatas += i
+                } else {
+                    rezultatas += i + ", "
+                }
+            }
+        }
+
+        console.log(rezultatas);
+
+        // console.log(
+        //     "*".repeat(3)
+        // )
+
+        console.log('%cAŠTUNTA UŽDUOTIS', heading);
+
+        let dydis = 3;
+
+        for(let y = 0; y < dydis; y++) {
+            let eilute = "";
+
+            for(let x = 0; x < dydis; x++) {
+                eilute += "*"
+            }
+
+            console.log(eilute);
+        }
+
+        console.log('%cDEVINTA UŽDUOTIS', heading);
+
+        dydis = 5;
+
+        for(let y = 0; y < dydis; y++) {
+            let eilute = "";
+
+            for(let x = 0; x < dydis; x++) {
+                if(y === x || y === dydis - x - 1) {
+                    eilute += "5"
+                } else {
+                    eilute += "*"
+                }
+            }
+
+            console.log(eilute);
+        }
+
+        console.log('%cDEŠIMTA UŽDUOTIS A', heading);
+        // Metam monetą. Monetos kritimo rezultatą imituojam random() funkcija, 
+        // kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame 
+        // į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. 
+        // Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:
+        // Iškritus herbui;
+
+        while(true) {
+            let skaicius = random(0, 1);
+            
+            if(skaicius === 0) {
+                console.log('H');
+                break;
+            } else {
+                console.log('S');
+            }
+        }
+
+        console.log('%cDEŠIMTA UŽDUOTIS B', heading);
+
+        // Tris kartus iškritus herbui;
+
+        let skaiciuotuvas = 0;
+        
+        while(true) {
+            let skaicius = random(0, 1);
+            
+            if(skaicius === 0) {
+                console.log('H');
+                skaiciuotuvas++;
+            } else {
+                console.log('S');
+            }
+
+            if(skaiciuotuvas === 3) {
+                break;
+            }
+        }
+
+        // Tris kartus iš eilės iškritus herbui;
+
+        console.log('%cDEŠIMTA UŽDUOTIS C', heading);
+
+        skaiciuotuvas = 0;
+        let skaiciuKiekis = 0;
+        
+        while(true) {
+            let skaicius = random(0, 1);
+            
+            if(skaicius === 0) {
+                console.log('H');
+                skaiciuotuvas++;
+            } else {
+                console.log('S');
+                skaiciuotuvas = 0;
+                skaiciuKiekis++;
+            }
+
+            if(skaiciuotuvas === 3) {
+                break;
+            }
+        }
+
+        console.log('Skaičių turėjome:', skaiciuKiekis);
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break ir continue</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // BREAK IR CONTINUE KOMANDOS VEIKIA VISUOSE CIKLUOSE
+
+        // Generuokite atsitiktinius nuo nulio iki 100 tol iki kol iškris nulis:
+
+        while(true) {
+            let skaicius = random(0, 100);
+
+            console.log(skaicius);
+
+            if(skaicius === 0) {
+                break;
+                // Už break komandos einantys veiksmai nebėra atliekami  
+            }
+        }
+
+        console.log('CONTINUE KOMANDA')
+
+        for(let i = 0; i <= 20; i++) {
+            if(i % 2 !== 0) {
+                // Komanda continue nurodo perėjimą į sekančią iteraciją
+                // Visi už šios eilutės aprašyti veiksmai nebevykdomi
+                continue;
+            }
+
+            console.log(i);
+            // Visi kiti veiksmai
+        }
+
+
+
+        for(let i = 0; i < 100; i++) {
+            
+            console.log('Pradžia')
+            break;
+            console.log('Pabaiga');   
+        }
+
+
+    </script>
+</body>
+</html>
