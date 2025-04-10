@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Kazys ir Petras žaidžia šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, 
+        // Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų 
+        // vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. 
+        // Taškų kiekį generuokite funkcija random(). Žaidimą laimi tas, 
+        // kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris 
+        // žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+        let heading = 'font-weight: bold; font-size: 22px;';
+
+        console.log('%cVIENUOLIKTA UŽDUOTIS', heading);
+
+        let kazioTaskai = 0;
+        let petroTaskai = 0;
+
+        while(kazioTaskai < 222 && petroTaskai < 222) {
+            let pTaskai = random(10, 20);
+            let kTaskai = random(5, 25);
+
+            kazioTaskai += kTaskai;
+            petroTaskai += pTaskai;
+
+            console.log('Kazio taskai:', kTaskai, 'Petro taskai:', pTaskai);
+
+            if(kazioTaskai > petroTaskai) {
+                console.log('Partiją laimėjo: Kazys');
+            } else if( kazioTaskai === petroTaskai) {
+                console.log('Įvyko lygiosios');
+            } else {
+                console.log('Partiją laimėjo: Petras');
+            }
+        }
+
+        if(kazioTaskai > petroTaskai) {
+            console.log('Nugalėtojas yra Kazys');
+        } else if (kazioTaskai === petroTaskai) {
+            console.log('Nugalėjo draugystė');
+        } else {
+            console.log('Nugalėtojas yra Petras');
+        }
+
+        console.log('%cDVYLIKTA UŽDUOTIS A', heading);
+
+        // Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite 
+        // pasinaudodami random() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+        // “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. 
+        // Suskaičiuokite kiek reikia smūgių.
+        // “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, 
+        // bet yra 50% tikimybė jog bus nepataikyta į vinį. (pasinaudokite random() funkcija).
+        
+        let ilgis = 85;
+        let smugiai = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let ikalta = 0;
+
+            while(ikalta <= ilgis) {
+                ikalta += random(5, 20);
+                smugiai++;
+            }
+        }
+
+        console.log(`Įkalti vinį prireikė: ${smugiai} smūgių`);
+
+        console.log('%cDVYLIKTA UŽDUOTIS B', heading);
+
+        ilgis = 85;
+        smugiai = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let ikalta = 0;
+            while(ikalta <= ilgis) {
+                if(random(0, 1) === 0) {
+                    ikalta += random(20, 30);
+                }
+                smugiai++;
+            }
+        }
+
+        console.log(`Įkalti vinį prireikė: ${smugiai} smūgių`);
+
+        // Jūs gavote užšifruotą žinutę
+        // jrgkjxvbsigdvifpjqyzlzxsxzjnvgojlziaofdfnufymsjqsxxyknqcchmpepoljekhydgmfvhwipvopllndyuddcgxnleutsmprxqlcnxxthdhtpnutqocvtuanouumbkmlxexzmc
+        // Surasti tai kas joje yra paslėpta jums padės varlė. Ji tupi ežero krante, o kiekviena raidė yra akmuo. Varlytė vienu šuoliu geba peršokti šešis akmenis. Su kiekvienu šuoliu priartėsite prie tikslo.
+        // Ką sako žinutė? 
+
+        let stringas = 'jrgkjxvbsigdvifpjqyzlzxsxzjnvgojlziaofdfnufymsjqsxxyknqcchmpepoljekhydgmfvhwipvopllndyuddcgxnleutsmprxqlcnxxthdhtpnutqocvtuanouumbkmlxexzmc';
+        let rezultatas = "";
+        for(let i = 6; i < stringas.length; i += 7) {
+            rezultatas += stringas[i]
+        }   
+
+        console.log(rezultatas.toUpperCase())
+
+    </script>
+</body>
+</html>

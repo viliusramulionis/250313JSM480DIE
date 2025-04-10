@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Masyvas (Array)
+        // Kompleksinis vienetas 
+        // Masyvas žymimas []
+        // Duomens tipas - object
+
+        let masyvas = [];
+
+        console.log(typeof masyvas);
+        
+        // Masyvas = Reikšmių grupė
+        masyvas = [15, "Labas Pasauli", false, []]
+
+        console.log(masyvas);
+
+        // Naujai sukurtas masyvas su senomis reikšmėmis
+        console.log([...masyvas]);
+
+        // Masyvo elementų kiekis:
+        console.log('Masyve yra patalpinta elementų:', masyvas.length);
+
+        // Norint į masyvą pridėti naują reikšmę:
+        masyvas[4] = "Naujai patalpintas stringas";
+
+        // BLOGA PRAKTIKA:
+        // Nebeatitinkatis masyvo ilgis
+        // masyvas[18] = "Dar viena patalpinta reikšmė";
+
+        // Masyvo pabaigoje norint patalpinti naują reikšmę:
+        masyvas[masyvas.length] = "Dar viena patalpinta reikšmė";
+
+        console.log([...masyvas]);
+
+        // Elementų talpinimas (masyvo pabaigoje) pasinaudojant Masyvo metodu:
+        // Galime nurodyti neribotą elementų
+        masyvas.push(10, 20, 30);
+
+        console.log([...masyvas]);
+
+        // Norint patalpinti elementą masyvo pradžioje, reikalingas masyvo reikšmių perskirtymas
+        // Galime pasinaudoti metodu:
+
+        masyvas.unshift("Masyvo pradžioje patalpintas stringas");
+
+        console.log([...masyvas]);
+
+        // Masyvo reikšmių paėmimas:
+
+        let antraReiksme = masyvas[1];
+        // console.log(antraReiksme);
+
+        for(let i = 0; i < masyvas.length; i++) {
+            console.log(masyvas[i]);
+        }
+
+        // Jeigu norime pakeisti masyvo reikšmę:
+        masyvas[0] = "Masyve pakeista reikmšmė";
+
+        console.log([...masyvas]);
+
+        // Skirtingai nei masyve, stringe keisti reikšmių pagal pozicija negalime
+        let stringas = "Labas";
+
+        stringas[0] = "B";
+
+        console.log(stringas);
+
+        // Pakeičiame visas masyvo reikšmes:
+        for(let i = 0; i < masyvas.length; i++) {
+            masyvas[i] = "Pakeista reikšmė " + i;
+        }
+
+        console.log([...masyvas]);
+
+        // Norint ištrinti reikšmę iš masyvo:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
+        // Pirmas parametras nurodo startinę poziciją nuo kurios norėtume ištrinti elementus
+        // Antrasis - kiek jų reikės pašalinti
+        masyvas.splice(3, 4);
+
+        console.log([...masyvas]);
+
+        let pirmasMasyvas = ["Televizorius", "Kompiuteris", "Radijas"];
+        let antrasMasyvas = ["BMW", "Audi", "WV"];
+
+        // Norint sujungti du masyvus į vieną
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+
+        let jungtinisMasyvas = pirmasMasyvas.concat(antrasMasyvas);
+
+        console.log(jungtinisMasyvas);
+
+        // Jeigu norime patikrinti ar masyve yra patalpinta ieškoma reikšmė:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+        if(jungtinisMasyvas.includes("Radijas")) {
+            console.log("Žodis radijas yra patalpintas masyve");
+        }
+
+        // Norint susigrąžinti reikšmės indeksą:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+
+        console.log(jungtinisMasyvas.indexOf("Audi"));
+
+        // Jeigu indeksas nerastas grąžinama atgal -1
+        console.log(jungtinisMasyvas.indexOf("Nėra"));
+
+        // Norint pašalinti paskutinį elementą iš masyvo:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+        jungtinisMasyvas.pop()
+
+        console.log([...jungtinisMasyvas]);
+
+        // Norint pakeisti masyvo elementų išdėstyma atviršktine tvarka
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+
+        jungtinisMasyvas.reverse()
+
+        console.log([...jungtinisMasyvas]);
+
+        // Norint pasiimti dalį elementų iš masyvo:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+    
+        let naujasMasyvas = jungtinisMasyvas.slice(1, 4);
+
+        console.log(naujasMasyvas);
+
+        let ieskomasElementas = "Radijas";
+        let indeksas = -1;
+
+        for(let i = 0; i < naujasMasyvas.length; i++) {
+            if(naujasMasyvas[i] === ieskomasElementas) {
+                indeksas = i;
+            }
+        }
+
+        console.log("Elemento radijas pozicija: ", indeksas);
+
+        naujasMasyvas[1] = "Televizorius";
+
+        console.log(naujasMasyvas);
+
+        // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+        let generuotasMasyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            generuotasMasyvas[i] = random(5, 25);
+        }
+
+        console.log(generuotasMasyvas);
+
+        // Masyvo apdorojimas...
+        
+    </script>
+</body>
+</html>
