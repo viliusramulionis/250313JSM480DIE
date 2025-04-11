@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daugiamačiai masyvai</title>
+</head>
+<body>
+    <script>
+        const masyvas = [
+            ["Televizorius", 199.99, 15],
+            ["Kompiuteris", 1099.99, 25],
+            ["Radijas", 26.50, 99]
+        ];
+
+        console.log(masyvas);
+        
+        // Norint paimti vidinio elemento reikšmę:
+        // console.log(masyvas[0][0], masyvas[0][1], masyvas[0][2]);
+
+        // Norint atspausdinti visų masyvo elementų turinį panaudojant ciklą:
+        for(let i = 0; i < masyvas.length; i++) {
+            console.log(masyvas[i][0], masyvas[i][1], masyvas[i][2]);
+        }   
+
+        // Iš masyvo išfiltruokite visus elementus kurių kiekis yra daugiau nei dvidešimt
+
+        console.log('FILTRUOTAS REZULTATAS:');
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i][2] > 20) {
+                console.log(masyvas[i][0], masyvas[i][1], masyvas[i][2]);
+            }
+        }
+
+    </script>
+</body>
+</html>

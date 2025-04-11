@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+        const masyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            masyvas[i] = random(5, 25); 
+        }
+
+        console.log(masyvas);
+
+        // Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+
+        let didesniNeiDesimt = 0;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > 10) {
+                didesniNeiDesimt++;
+            }
+        }
+
+        console.log('Reikšmių didesnių nei dešimt yra:', didesniNeiDesimt);
+
+        // Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+
+        // console.log(Math.max(...masyvas));
+
+        let max = 0;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > max) {
+                max = masyvas[i];
+            }
+        }
+
+        console.log("Didžiausias skaičius:", max);
+
+        const indeksai = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] === max) {
+                indeksai[indeksai.length] = i;
+            }
+        }
+
+        console.log('Didžiausios reikšmės indeksai:', indeksai);
+
+        // Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+
+        let lyginiuIndeksuSuma = 0;
+
+        for(let i = 0; i < masyvas.length; i += 2) {
+            lyginiuIndeksuSuma += masyvas[i];
+        }
+
+        console.log("Lyginių indeksų reikšmių suma:", lyginiuIndeksuSuma);
+
+        // Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+
+        const naujasMasyvas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            naujasMasyvas[i] = masyvas[i] - i;
+        }
+
+        console.log(naujasMasyvas);
+
+        // Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
+
+        for(let i = 0; i < 10; i++) {
+            masyvas[masyvas.length] = random(5, 25);
+        }
+
+        console.log([...masyvas]);
+
+        // Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+
+        const porinisMasyvas = [];
+        const nePorinisMasyvas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(i % 2 === 0) {
+                porinisMasyvas[porinisMasyvas.length] = masyvas[i];
+            } else {
+                nePorinisMasyvas[nePorinisMasyvas.length] = masyvas[i];
+            }
+        }
+
+        console.log('Porinis masyvas: ', porinisMasyvas);
+        console.log('NePorinis masyvas: ', nePorinisMasyvas);
+
+        // Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
+        
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > 15) {
+                masyvas[i] = 0;
+            }
+        }
+
+        console.log(masyvas);
+
+        // Suraskite pirmą indeksą, kurio elemento reikšmė didesnė už 10;
+
+        let pirmasIndeksas = -1;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > 10) {
+                pirmasIndeksas = i;
+                break;
+            }
+        }
+
+        console.log("Pirmas indeksas kurio reikšmė didesnė nei dešimt:", pirmasIndeksas);
+    </script>
+</body>
+</html>
