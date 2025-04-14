@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        // Funkcijos priima parametrus (parameters), jų kiekis yra neribotas
+        // Paremtrai atskiriami per kablelį
+        // Funkcija gali grąžinti atgal rezultatą
+        // Arba gali iš karto atlikinėti veiksmus
+        function suma(parametras1, parametras2) {
+            console.log(parametras1 + parametras2);
+        }
+
+        // Inicijuojant funkciją perduodami argumentai, tokiu pat eiliškumu kaip ir funkcijos parametrai 
+        suma(25, 50);
+
+        function daugyba(pirmas, antras) {
+            return pirmas * antras;
+        }   
+
+        const rezultatas = daugyba(22, 19);
+
+        console.log(rezultatas);
+
+        // DRY - Don't Repeat Yourself
+        function skaiciuStringas(kiekis, daliklis) {
+            let rezultatas = "";
+
+            for(let i = 1; i <= kiekis; i++) {
+                if(i % daliklis === 0) {
+                    if(i === kiekis - kiekis % daliklis) {
+                        rezultatas += i
+                    } else {
+                        rezultatas += i + ", "
+                    }
+                }
+            }
+
+            console.log(rezultatas);
+        }
+
+        // Skliausteliai nurodo funkcijos iniciavimą
+        // To paties kodo panaudojimas tris kartus su skirtingomis reikšmėmis:
+        skaiciuStringas(5000, 65);
+
+        skaiciuStringas(3000, 11);
+
+        skaiciuStringas(100, 8);
+
+        // Funkcijos gali būti priskirtos kaip kintamųjų reikšmės
+        // Tokiu atveju inciavimas turi sekti už funkcijos deklaravimo:
+
+        const dalyba = function(a, b) {
+            return a / b;
+        }
+
+        console.log(dalyba(15, 5));
+
+        // Arrow funkcijos aprašymas:
+        // const atimtis = (a, b) => {
+        //     return a - b;
+        // }
+
+        // console.log(atimtis(30, 15));
+
+        // Jeigu funkcija atlieka vienos eilutės veiksmą, atsiranda galimybė ją supaprastinti:
+        // Riestiniai skliaustai ir return komanda tampa neprivaloma:
+        const atimtis = (a, b) => a - b;
+        
+
+        console.log(atimtis(30, 15));
+
+        const masyvas = [25, 30, 12, 18, 11, 5];
+
+        // Apgliaubkite visus skaičius esančius masyve riestiniais skliaustais
+
+        // const naujasMasyvas = [];
+
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     naujasMasyvas[i] = "{" + masyvas[i] + "}";
+        // }
+
+        // console.log(naujasMasyvas);
+
+        // map() metodo panaudojimas:
+
+        // Funkcijos duomens tipas yra function
+        console.log(typeof function() {});
+
+        console.log(function(a, b) { return a + b});
+        
+        // Jeigu nenaudojame likusių parametrų, o tik pirmajį, kitų užrašyti nėra būtinybės
+        // Jeigu naudojame arrow funkciją ir tik vieną parametrą, skliausteliai tampa nebereikalingi
+        // Jeigu naudojame arrow funkciją, o atliekamas veiksmas yra tik vienos eilutės ilgio, riestiniai skliaustai ir komanda return tampa nebereikalingi
+        
+        const naujasMasyvas = masyvas.map(elementas => "{" + elementas + "}");
+        
+        console.log(naujasMasyvas);
+
+        // Map funkcijos aprašymas:
+        // Callback = Atsišaukimo fukcija
+        function mapas(array, callback) {
+            const naujasMasyvas = [];
+
+            for(let i = 0; i < array.length; i++) {
+                naujasMasyvas[i] = callback(array[i], i, array);
+            }
+
+            return naujasMasyvas;
+        }
+
+        console.log(mapas(masyvas, function(elementas, indeksas, masyvas) {
+            return "{" + elementas + "}";
+        }));
+    </script>
+</body>
+</html>

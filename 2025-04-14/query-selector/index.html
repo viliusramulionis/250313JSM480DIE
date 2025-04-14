@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turinio atvaizdavimas</title>
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .red {
+            color: red;
+            font-size: 28px;
+        }
+
+        .blue {
+            color: blue;
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rezultatas:</h1>
+        <div class="result">x</div>
+    </div>
+    <!-- Skriptą rašome body elemento pabaigoje -->
+    <script>
+        let skaicius = 25;
+
+        // Globalūs kintamieji duoti iš naršyklės:
+        // document, window, console
+
+        let spalva = "red";
+
+        if(skaicius > 22) {
+            spalva = "blue";
+        }
+
+        document.querySelector(".result").innerHTML = `<span class="${spalva}">${skaicius}</span>`;
+    </script>
+</body>
+</html>
