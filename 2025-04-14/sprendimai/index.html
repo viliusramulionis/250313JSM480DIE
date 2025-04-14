@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. 
+        // Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve 
+        // (t.y. neturi kartotis).
+
+        let heading = 'font-weight: bold; font-size: 22px;';
+
+        console.log('%cTREČIA UŽDUOTIS', heading);
+
+        const pirmasMasyvas = [];
+
+        while(pirmasMasyvas.length < 100) {
+            const skaicius = random(100, 999);
+
+            if(!pirmasMasyvas.includes(skaicius)) {
+                pirmasMasyvas[pirmasMasyvas.length] = skaicius;
+            }
+        }
+
+        const antrasMasyvas = [];
+
+        while(antrasMasyvas.length < 100) {
+            const skaicius = random(100, 999);
+
+            if(!antrasMasyvas.includes(skaicius)) {
+                antrasMasyvas[antrasMasyvas.length] = skaicius;
+            }
+        }
+
+        // Patikrinimas ar reikšmė yra patalpinta masyve:
+
+        // for(let i = 0; i < pirmasMasyvas.length; i++) {
+        //     if(pirmasMasyvas.includes(pirmasMasyvas[i], i + 1)) {
+        //         console.log(`Skaičius ${pirmasMasyvas[i]} dubliuojasi`);
+        //     }
+        // }
+
+        console.log(pirmasMasyvas, antrasMasyvas);
+
+
+        // Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, 
+        // kurios yra pirmame 3 uždavinio masyve, bet nėra antrame 3 uždavinio masyve.
+
+        console.log('%cKETVIRTA UŽDUOTIS', heading);
+
+        const naujasMasyvas = [];
+
+        for(let i = 0; i < pirmasMasyvas.length; i++) {
+            if(!antrasMasyvas.includes(pirmasMasyvas[i])) {
+                naujasMasyvas[naujasMasyvas.length] = pirmasMasyvas[i];
+            }
+        }
+
+        console.log(naujasMasyvas);
+
+        // Sugeneruokite masyvą iš elementų, kurie kartojasi 
+        // abiejuose 3 uždavinio masyvuose.
+
+        console.log('%cPENKTA UŽDUOTIS', heading);
+
+        const pasikartojantisMasyvas = [];
+
+        for(let i = 0; i < pirmasMasyvas.length; i++) {
+            if(antrasMasyvas.includes(pirmasMasyvas[i])) {
+                pasikartojantisMasyvas[pasikartojantisMasyvas.length] = pirmasMasyvas[i];
+            }
+        }
+
+        console.log(pasikartojantisMasyvas);
+
+        // Sugeneruokite 10 skaičių masyvą pagal taisyklę: 
+        // Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. 
+        // Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. 
+        // Penktas trečio ir ketvirto suma ir t.t.
+
+        console.log('%c ŠEŠTA UŽDUOTIS', heading);
+
+        const desimtiesMasyvas = [random(5, 25), random(5, 25)];
+
+        for(let i = desimtiesMasyvas.length; i < 10; i++) {
+            desimtiesMasyvas[i] = desimtiesMasyvas[i - 2] + desimtiesMasyvas[i - 1];
+        }
+
+        console.log(desimtiesMasyvas);
+        
+        // Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, 
+        // o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+
+        console.log('%c SEPTINTA UŽDUOTIS', heading);
+
+        const raides = ['A', 'B', 'C', 'D'];
+        const raidziuMasyvas = [];
+        const raidziuKiekiai = [0, 0, 0, 0];
+
+        for(let i = 0; i < 200; i++) {
+            const raide = raides[ random(0, raides.length - 1) ];
+            raidziuMasyvas.push(raide);
+
+            for(let r = 0; r < raides.length; r++) {
+                if(raide === raides[r]) {
+                    raidziuKiekiai[r]++;
+                }
+            }
+        }
+
+        console.log('A Raidės:', raidziuKiekiai[0], 'B Raidės:', raidziuKiekiai[1], 'C Raidė:', raidziuKiekiai[2], 'D Raidė', raidziuKiekiai[3]);
+
+        
+        console.log(raidziuMasyvas);
+
+        // Išrūšiuokite 7 uždavinio masyvą pagal abecėlę.
+
+        console.log('%c AŠTUNTA UŽDUOTIS', heading);
+
+        raidziuMasyvas.sort();
+
+        console.log(raidziuMasyvas);
+        
+        // Sugeneruokite 3 masyvus pagal 7 uždavinio sąlygą. 
+        // Sudėkite masyvus, sudėdami reikšmes pagal atitinkamus indeksus. 
+        // Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių 
+        // ir kiek unikalių kombinacijų gavote.
+
+        console.log('%c DEVINTA UŽDUOTIS', heading);
+
+        const pirmasRaidziuMasyvas = [];
+        const antrasRaidziuMasyvas = [];
+        const treciasRaidziuMasyvas = [];
+
+        for(let i = 0; i < 200; i++) {
+            
+            pirmasRaidziuMasyvas.push(
+                raides[ random(0, raides.length - 1) ]
+            );
+            
+            antrasRaidziuMasyvas.push(
+                raides[ random(0, raides.length - 1) ]
+            );
+
+            treciasRaidziuMasyvas.push(
+                raides[ random(0, raides.length - 1) ]
+            );
+        }
+
+        console.log(pirmasRaidziuMasyvas, antrasRaidziuMasyvas, treciasRaidziuMasyvas);
+
+        const raidziuKombinacijos = [];
+
+        for(let i = 0; i < pirmasRaidziuMasyvas.length; i++) {
+            raidziuKombinacijos.push(pirmasRaidziuMasyvas[i] + antrasRaidziuMasyvas[i] + treciasRaidziuMasyvas[i]);
+        }
+
+        console.log(raidziuKombinacijos);
+
+        let unikliosReiksmes = 0; 
+        let unikaliosKombinacijos = 0;
+
+        for(let i = 0; i < raidziuKombinacijos.length; i++) {
+            if(
+                raidziuKombinacijos[i] !== 'AAA' &&
+                raidziuKombinacijos[i] !== 'BBB' &&
+                raidziuKombinacijos[i] !== 'CCC' &&
+                raidziuKombinacijos[i] !== 'DDD'
+            ) {
+                unikliosReiksmes++;
+            }
+
+            if(!raidziuKombinacijos.includes(raidziuKombinacijos[i], i + 1)) {
+                unikaliosKombinacijos++;
+            }
+        }
+
+        console.log('Unikalių reikšmių yra:', unikliosReiksmes);
+        console.log('Unikalių kombinacijų yra:', unikaliosKombinacijos);
+    </script>
+</body>
+</html>
