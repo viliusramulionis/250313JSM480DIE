@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivykiai</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center py-5">
+        <div class="result mb-3 fs-1"></div>
+        <!-- Pelės kairio klavišo paspaudimo įvykis (click) -->
+        <button class="btn btn-primary" onclick="padidinti();">Paspausk Mane</button>
+        <button class="btn btn-warning">Paspausk Mane</button>
+        <button class="btn btn-danger">Paspausk Mane</button>
+    </div>
+    <script>
+        let skaicius = 0;
+
+        // Skaiciaus atvaizdavimas atidarius dokumentą
+        document.querySelector('.result').innerHTML = skaicius;
+
+        function padidinti() {
+            skaicius++;
+            // Pakeitimų atvaizdavimas kiekvieną kartą paspaudus ant mygtuko
+            document.querySelector('.result').innerHTML = skaicius;
+        }
+
+        // Antras įvykio registravimo būdas
+        // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+        // Metodas addEventListener gali priskirti ne viena ivyki prie to paties elemento
+        document.querySelector('.btn-warning').addEventListener('click', () => {
+            console.log('Veikia');
+        });
+        
+        // Trečias įvykio registravimo būdas
+        document.querySelector('.btn-danger').onclick = () => {
+            console.log('Veikia');
+        }
+
+    </script>
+</body>
+</html>

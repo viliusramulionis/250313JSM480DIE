@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektai</title>
+</head>
+<body>
+    <script>
+        const objektas = {
+            // Objekte patalpintos reikšmės yra vadinamos savybėmis (properties)
+            // Raktažodis ir reikšmė (key and value pair) 
+            raktazodis: "Labas Pasauli",
+            stringas: "Hello",
+            tiesaArMelas: true,
+            skaicius: 10,
+            // Funkcijos objektuose vadinamos metodais
+            funkcija: function() {
+                return "Hi"
+            }   
+        }
+
+        // Norint susigrąžinti reikšmę pagal raktažodį:
+        console.log('Skaičius patalpintas objekte:', objektas.skaicius);
+        
+        console.log('Funkcija grąžino:', objektas.funkcija());
+
+        console.log(objektas);
+
+        Array.prototype.mapinimas = () => {
+            return "Pasisveikinimas";
+        }
+
+        console.log([].mapinimas());
+
+        const zaidimas = {
+            x : 18,
+            y : 22,
+            // Geteris (Getter)
+            getCoordinates: function() {
+                // this raktažodis nurodo objektą kuriame yra patalpintas metodas
+                // console.log(this);
+                return `X koordinate: ${this.x} Y koordinate: ${this.y}`; 
+            },
+
+            // Seteris (Setter)
+            setX: function(naujaReiksme) {
+                this.x = naujaReiksme;
+
+                return this;
+            },
+            setY: function(naujaReiksme) {
+                this.y = naujaReiksme;
+
+                return this;
+            }
+        }
+
+        console.log(zaidimas.getCoordinates());
+
+        // Grandinės kūrimas (Chaining)
+        zaidimas.setX(23).setY(25).setX(88).setY(77);
+
+        console.log(zaidimas);
+
+        zaidimas.x = 99;
+
+        console.log(zaidimas);
+
+        // Norint pašalinti reikšmę iš objekto:
+
+        const zmogus = {
+            vardas: "Jonas",
+            pavarde: "Jonaitis"
+        }
+
+        delete zmogus.pavarde;
+
+        console.log(zmogus);
+    </script>
+</body>
+</html>

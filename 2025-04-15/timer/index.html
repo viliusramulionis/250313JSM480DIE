@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .timer {
+            font-size: 100px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer"></div>
+    <script>
+        let minutes = 10;
+        let seconds = 0;
+
+        function formatTime() {
+            let formattedTime = `${minutes}:${seconds}`;
+
+            if(minutes === 0) {
+                formattedTime = `${seconds}`;
+            }
+
+            if(seconds === 0) {
+                formattedTime += `0`;
+            }
+
+            return formattedTime;
+        }
+
+ 
+        document.querySelector('.timer').innerHTML = formatTime();
+
+        const intervalID = setInterval(() => {
+            // Sargas (Guard)
+            if(minutes === 0 && seconds === 0) {
+                return clearInterval(intervalID);
+            }
+
+            if(seconds === 0) {
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+
+            document.querySelector('.timer').innerHTML = formatTime();
+        }, 1000);
+    </script>
+</body>
+</html>
