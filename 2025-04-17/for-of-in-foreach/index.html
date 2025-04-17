@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papildomi ciklai</title>
+</head>
+<body>
+    <div class="blokeliai">
+        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, perferendis!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eos quidem possimus aspernatur voluptates tenetur, amet aliquam fugiat, reiciendis modi est quaerat, unde eligendi laudantium. Doloremque adipisci atque eaque est obcaecati debitis aut quod amet cum fuga voluptas qui, libero repellat quasi velit sint autem minima accusantium tempore! Exercitationem voluptatibus voluptatum impedit ad saepe!</div>
+        <div>Lorem, ipsum dolor.</div>
+        <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum minima iusto autem facilis soluta animi voluptatem in corrupti!</div>
+        <div>Lorem, ipsum.</div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, nemo optio. Quis, vitae? Doloribus, nostrum quos? Amet at minus distinctio porro impedit?</div>
+        <div>Lorem ipsum dolor sit amet consectetur.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus.</div>
+    </div>
+    <script>
+        const masyvas = [15, 25, 35, 45, 55];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            console.log(masyvas[i]);
+        }
+
+        // Jeigu norime sugeneruoti naują masyvą pagal seno masyvo duomenis
+        const naujasMasyvas = masyvas.map(value => value + 99);
+
+        console.log(naujasMasyvas);
+
+        // Kuomet norime apdoroti masyvo reikšmes turime supaprastinta for ciklo variaciją:
+        // Raktažodis of nurodo, jog bus grąžinama kiekviena masyvo reikšmė.
+        
+        for(const reiksme of masyvas) {
+            console.log(reiksme);
+        }
+
+        // in raktažodis grąžina kiekvieno masyvo elemento indeksą
+        for(const indeksas in masyvas) {
+            console.log(masyvas[indeksas]);
+        }
+
+        // forEach metodas nieko negrąžina
+        // Dažniausias panaudojimas kuomet norime iteruoti per elementus
+        masyvas.forEach((value, index, array) => {
+            console.log(value, index, array);
+        });
+        
+        // querySelector metodas grąžina tik vieną ir patį pirmą elementą
+        console.log(document.querySelector('.blokeliai div'));
+
+        // Kiekviename div elemente patalpintame tekste pakeiskite visas a raides žvaigždutėmis
+        document.querySelectorAll('.blokeliai div').forEach((el) => {
+            el.textContent = el.textContent.replaceAll(/[a]/gi, "*");
+        });
+
+
+    </script>
+</body>
+</html>
