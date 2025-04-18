@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of games</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .game {
+            background-color: black;
+            width: 800px;
+            height: 500px;
+            position: relative;
+        }
+
+        .box {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="game"></div>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const game = document.querySelector('.game');
+        const gW = game.offsetWidth;
+        const gH = game.offsetHeight;
+        const boxW = 50;
+        const boxH = 50;
+        
+        let pP = 0;
+        let cP = 0;
+        let paspausta = false;
+
+        setInterval(() => {
+            // Pirmas variantas:
+            // game.innerHTML = `<div 
+            //                     class="box" 
+            //                     style="background-color: red; width: ${boxW}px; height: ${boxH}px; top: ${random(0, gH - boxH)}px; left: ${random(0, gW - boxW)}px;"
+            //                     onclick="paspaudimas()"
+            //                     ></div>`;
+
+            // Antras variantas:
+            game.innerHTML = '';
+
+            const box = document.createElement('div');
+            
+            box.style.backgroundColor = `rgb(${random(100, 255)}, ${random(100, 255)}, ${random(100, 255)})`;
+            box.style.width = `${boxW}px`;
+            box.style.height = `${boxH}px`;
+            box.style.top = `${random(0, gH - boxH)}px`;
+            box.style.left = `${random(0, gW - boxW)}px`;
+
+            box.classList.add('box');
+
+            box.onclick = paspaudimas;
+
+            game.appendChild(box);
+
+            // Taškų skaičiavimas:
+            if(paspausta) { 
+                pP++;
+                paspausta = false;
+            } else {
+                cP++;
+            }
+
+            console.log('Žaidėjo taškai', pP, 'Kompiuterio taškai', cP);
+            
+        }, 1000);
+
+        function paspaudimas() {
+            paspausta = true;
+        }
+    </script>
+</body>
+</html>
