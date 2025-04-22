@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antras pavyzdys</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container py-5" style="max-width: 768px;">
+        <div class="mb-3">
+            <input 
+                type="text" 
+                placeholder="Įvyeskite vardą"
+                class="form-control"
+                name="vardas"
+                onkeyup="handleKeyUp(event)"
+            >
+        </div>
+        <div class="mb-3">
+            <input 
+                type="text" 
+                placeholder="Įvyeskite pavardę" 
+                class="form-control"
+                name="pavarde"
+                onkeyup="handleKeyUp(event)"
+            >
+        </div>
+        <div class="mb-3">
+            <input 
+                type="text" 
+                placeholder="Įvyeskite telefoną" 
+                class="form-control"
+                name="telefonas"
+                onkeyup="handleKeyUp(event)"
+            >
+        </div>
+        <div>
+            <button class="btn btn-primary" onclick="handleClick()">Siųsti</button>
+        </div>
+    </div>
+
+    <script>
+        const reiksmes = {
+            vardas: "Vilius",
+            pavarde: "",
+            telefonas: ""
+        };
+
+        function handleKeyUp(e) {
+            // if(e.target.name === "vardas") {
+            //     reiksmes.vardas = e.target.value;
+            // } 
+            // if(e.target.name === "pavarde") {
+            //     reiksmes.pavarde = e.target.value;
+            // } 
+            // if(e.target.name === "telefonas") {
+            //     reiksmes.telefonas = e.target.value;
+            // } 
+
+            // Į visų tipų objektų reikšmes galime kreiptis per laužtinius skliaustus
+
+            reiksmes[e.target.name] = e.target.value;
+        }
+
+        function handleClick() {
+            console.log('Vardas', reiksmes.vardas, 'Pavardė', reiksmes.pavarde, 'Telefonas', reiksmes.telefonas);
+        }
+
+    </script>
+</body>
+</html>

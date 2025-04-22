@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirmas pavyzdys</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container py-5" style="max-width: 768px;">
+        <div class="mb-3">
+            <input 
+                type="text" 
+                placeholder="Įvyeskite vardą"
+                name="vardas" 
+                class="form-control"
+                onkeyup="handleVardas()"
+            >
+        </div>
+        <div class="mb-3">
+            <input 
+                type="text" 
+                placeholder="Įvyeskite pavardę" 
+                name="pavarde"
+                class="form-control"
+                onkeyup="handlePavarde()"
+            >
+        </div>
+        <div class="mb-3">
+            <input 
+                type="text" 
+                placeholder="Įvyeskite telefoną" 
+                name="telefonas"
+                class="form-control"
+                onkeyup="handleTelefonas()"
+            >
+        </div>
+        <div>
+            <button class="btn btn-primary" onclick="handleClick()">Siųsti</button>
+        </div>
+    </div>
+
+    <script>
+        let vardas = "";
+        let pavarde = "";
+        let telefonas = "";
+
+        function handleVardas() {
+            vardas = document.querySelector('[name="vardas"]').value;
+        }
+
+        function handlePavarde() {
+            pavarde = document.querySelector('[name="pavarde"]').value;
+        }
+
+        function handleTelefonas() {
+            telefonas = document.querySelector('[name="telefonas"]').value;
+        }
+
+        function handleClick() {
+            console.log('Vardas', vardas, 'Pavardė', pavarde, 'Telefonas', telefonas);
+        }
+
+    </script>
+</body>
+</html>
