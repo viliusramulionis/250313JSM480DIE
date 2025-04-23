@@ -1,0 +1,40 @@
+.rating {
+    position: relative;
+    width: fit-content;
+}
+
+.stars-active {
+    color: rgb(250, 208, 38);
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.stars {
+    color: gray;
+}
+
+.product-title {
+    font-size: 18px;
+    color: rgb(6, 151, 247);
+}
+
+.price .current {
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+}
+.price .old {
+    color: gray;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 3px 10px;
+}
