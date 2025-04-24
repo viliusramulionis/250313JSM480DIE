@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktų sąrašas</title>
+    <!-- Bootstrap integracija -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <!-- Bootstrap icons integracija -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Stiliaus integracija -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- defer raktažodis nurodo, jog skripto paleidimas įvyks po galutinio DOM generavimo -->
+    <script src="assets/js/products.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    <div class="container py-5" style="max-width: 1024px;">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>Produktų sąrašas</h1>
+            <button class="btn btn-danger" onclick="showForm(event)">Naujas produktas</button>
+        </div>
+        <div id="form" class="mt-3" style="display: none;">
+            <form onsubmit="handleSubmit(event)">
+                <div class="mb-3">
+                    <input type="text" placeholder="Produkto pavadinimas" name="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <textarea name="description" class="form-control" placeholder="Produkto aprašymas"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="text" placeholder="Nuotraukos adresas" name="thumbnail" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <input type="number" placeholder="Įvertinimas" name="rating" class="form-control" min="0" max="5">
+                </div>
+                <div class="mb-3">
+                    <input type="number" placeholder="Kaina" name="price" class="form-control" min="0" step=".01">
+                </div>
+                <div class="mb-3">
+                    <input type="number" placeholder="Nuolaida" name="discountPercentage" class="form-control" min="0" max="100">
+                </div>
+                <div>
+                    <button class="btn btn-primary">Įvesti</button>
+                </div>
+            </form>
+        </div>
+        <div class="result mt-5"></div>
+    </div>
+</body>
+</html>
