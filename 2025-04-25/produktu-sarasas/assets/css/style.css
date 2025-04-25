@@ -1,0 +1,115 @@
+.products .rating {
+    position: relative;
+    width: fit-content;
+}
+
+.products .stars-active {
+    color: rgb(250, 208, 38);
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.products .stars {
+    color: gray;
+}
+
+.products .product-title {
+    font-size: 18px;
+    color: rgb(6, 151, 247);
+}
+
+.products .price .current {
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+}
+.products .price .old {
+    color: gray;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.products .discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 3px 10px;
+}
+
+.cart-wrapper {
+    box-shadow: 0 0 25px #00000038;
+    border-radius: 15px;
+}
+
+
+.cart .cart-products img {
+    width: 100px;
+    height: 140px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.cart .cart-left {
+    padding: 40px 45px;
+}
+
+.cart .title {
+    color: gray;
+    font-weight: 500;
+}
+
+.cart .description {
+    color: black;
+    font-weight: 500;
+}
+
+.cart .empty-button {
+    background: none;
+    border: none;
+    color: rgb(9, 84, 195);
+    font-size: 24px;
+}
+
+.cart .price {
+    font-weight: 500;
+    color: rgb(71, 71, 71);
+}
+
+.cart .back-button {
+    font-weight: 500;
+    color: rgb(80, 80, 80);
+    text-decoration: none;
+}
+
+.cart .back-button i {
+    color: rgb(37, 37, 37);
+}
+
+.cart .cart-right {
+    background-color: rgb(231, 231, 231);
+}
+
+.cart .heading {
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.cart .totals {
+    border-top: 1px solid rgb(201, 201, 201);
+}
+
+.cart .label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(103, 103, 103);
+    font-size: 18px;
+}
+
+.cart .value {
+    font-weight: 600;
+    color: rgb(103, 103, 103);
+    font-size: 18px;
+}

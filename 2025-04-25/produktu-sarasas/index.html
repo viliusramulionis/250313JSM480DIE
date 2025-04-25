@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktų sąrašas</title>
+    <!-- Bootstrap integracija -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <!-- Bootstrap icons integracija -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Stiliaus integracija -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- defer raktažodis nurodo, jog skripto paleidimas įvyks po galutinio DOM generavimo -->
+    <script src="assets/js/products.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="py-5">
+        <div class="cart" style="display: none;">
+            <div class="container">
+                <div class="cart-wrapper overflow-hidden">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="cart-left">
+                                <div class="d-flex justify-content-between pb-4 align-items-center">
+                                    <h2 class="fw-bolder">Shopping Cart</h2>
+                                    <span class="item-count">1 Item</span>
+                                </div>
+                                <div class="cart-products border-top"></div>
+                                <div class="pt-5">
+                                    <a href="#" class="back-button" onclick="backtToProductsList(event)">
+                                        <i class="bi bi-arrow-left"></i>
+                                        <span>Back to the Shop</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 cart-right">
+                            <div class="p-5">
+                                <div class="heading mb-3" style="padding-bottom: 20px;">
+                                    <h3 class="text-dark-emphasis">Summary</h3>
+                                </div>
+                                <div class="d-flex justify-content-between mb-4">
+                                    <span class="label">Items 3</span>
+                                    <span class="value subtotal"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <span class="label mb-2">Shipping</span>
+                                    <select class="form-select" onchange="handleShipping(event)">
+                                        <option value="0">Pasirinkite siuntimo būdą:</option>
+                                        <option value="1">DPD Kurjeris + 5 Eur</option>
+                                        <option value="2">Omniva Paštomatas + 2.99 Eur</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <span class="label mb-2">Give Code</span>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Enter your code" 
+                                        class="form-control discount-code"
+                                        onchange="handleDiscount(event)"
+                                    >
+                                </div>
+                                <div class="d-flex justify-content-between totals pt-3 mt-5">
+                                    <span class="label">Total Price</span>
+                                    <span class="value total-price"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <div class="container" style="max-width: 1024px;">
+                <div class="d-flex justify-content-between align-items-center pb-4">
+                    <h1>Produktų sąrašas</h1>
+                    <button class="btn btn-danger" onclick="showForm(event)">Naujas produktas</button>
+                </div>
+                <div id="form" class="mt-3" style="display: none;">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="mb-3">
+                            <input type="text" placeholder="Produkto pavadinimas" name="title" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="description" class="form-control"
+                                placeholder="Produkto aprašymas"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" placeholder="Nuotraukos adresas" name="thumbnail" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" placeholder="Įvertinimas" name="rating" class="form-control" min="0"
+                                max="5">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" placeholder="Kaina" name="price" class="form-control" min="0"
+                                step=".01">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" placeholder="Nuolaida" name="discountPercentage" class="form-control"
+                                min="0" max="100">
+                        </div>
+                        <div>
+                            <button class="btn btn-primary">Įvesti</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="products-list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
