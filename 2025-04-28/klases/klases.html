@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasės</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        {
+            // Blokinė apimtis (Block scope)
+            let x = 99;
+
+            if (x > 98) {
+                x = 101;
+            }
+
+            x = "Labas";
+        }
+
+        function sum(a, b) {
+            // Funkcijos apimtis (Function scope)
+            return a + b;
+        }
+
+        const skaiciai = {
+            pirmas: 25,
+            antras: 15,
+            suma: function () {
+                return this.pirmas + this.antras;
+            }
+        }
+
+        // console.log(skaiciai.suma());
+
+        // Klasė yra objekto šablonas
+        class Automobilis {
+            // Savybių reikšmių priskyrimas pagal nutylėjimą (default)
+            gamintojas = "BMW";
+            variklis = "Elektrinis";
+            oroKondicionierius = true;
+
+            // Konstruktoriaus metodas:
+            // Paleidžiamas kuomet prie klasės pavadinimo rašome raktažodį new
+            constructor(gamintojas, variklis, oroKondicionierius) {
+                if (gamintojas)
+                    this.gamintojas = gamintojas;
+
+                if (variklis)
+                    this.variklis = variklis;
+
+                if (oroKondicionierius)
+                    this.oroKondicionierius = oroKondicionierius;
+            }
+
+            // Klasėje aprašomas metodas:
+            klasejePatalpintasMetodas() {
+                return false;
+            }
+        }
+
+        // Raktažodis new nurodo objekto iniciavimą pagal nurodytą klasę
+        const audi = new Automobilis("Audi", "Dyzelinas", false);
+
+        console.log(audi);
+
+        const bmw = new Automobilis();
+
+        console.log(bmw);
+
+        const wv = new Automobilis("WV", "Benzinas", true);
+
+        console.log(wv);
+
+        // console.log(document.querySelectorAll('div'));
+
+        class Studentas {
+            constructor(vardas, pavarde, gimimoMetai) {
+                this.vardas = vardas;
+                this.pavarde = pavarde;
+                this.gimimoMetai = gimimoMetai;
+            }
+
+            studentoDuomenys() {
+                return `Studento vardas: ${this.vardas}, Pavardė: ${this.pavarde}, Gimimo metai: ${this.gimimoMetai}`;
+            }
+
+            // geteriai (getters) - Metodai skirti paimti informaciją
+            // seteriai (setters) - Metodai skirti nustatyti naują informaciją
+            // pvz getVardas() - Norint paimti vardą
+            // pvz setVardas() - Norint pakeisti vardą
+
+            setVardas(vardas) {
+                if (typeof vardas !== 'string')
+                    return this;
+
+                this.vardas = vardas;
+
+                return this;
+            }
+        }
+
+        // PIRMAS STUDENTAS
+
+        const pirmasStudentas = new Studentas("Jonas", "Jonaitis", 1982);
+
+        console.log(pirmasStudentas);
+
+        console.log(pirmasStudentas.studentoDuomenys());
+
+        // ANTRAS STUDENTAS
+
+        const antrasStudentas = new Studentas("Petras", "Petraitis", 1990);
+
+        console.log(antrasStudentas);
+
+        console.log(antrasStudentas.studentoDuomenys());
+
+        antrasStudentas.setVardas('Antanas');
+
+        // antrasStudentas.vardas = 'Antanas';
+
+        console.log(antrasStudentas.studentoDuomenys());
+
+        class Produktas {
+            constructor(pavadinimas, aprasymas, kaina, nuolaida, ivertinimas) {
+                this.pavadinimas = pavadinimas;
+                this.aprasymas = aprasymas;
+                this.kaina = kaina;
+                this.nuolaida = nuolaida;
+                this.ivertinimas = ivertinimas;
+            }
+
+            // Kaina su nuolaida (Geteris)
+            getKainaSuNuolaida() {
+                return this.kaina - (this.kaina * this.nuolaida / 100);
+            }
+
+            // Įvertinimas procentais (Geteris)
+            getIvertinimasProcentais() {
+                return this.ivertinimas * 2 * 10;
+            }
+
+            setPrice(price) {
+                if (typeof price !== 'number')
+                    return this;
+
+                this.price = price;
+
+                return this;
+            }
+        }
+
+        const data = [
+            {
+
+                description: 'The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.',
+                discountPercentage: 7.17,
+                id: 1,
+                price: 9.99,
+                rating: 4.94,
+                thumbnail: 'https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png',
+                title: 'Essence Mascara Lash Princess'
+            },
+            {
+                description: "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+                discountPercentage: 5.5,
+                id: 2,
+                price: 19.99,
+                rating: 3.28,
+                thumbnail: 'https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png',
+                title: 'Eyeshadow Palette with Mirror'
+            },
+            {
+                description: 'The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.',
+                discountPercentage: 18.14,
+                id: 3,
+                price: 14.99,
+                rating: 3.82,
+                thumbnail: 'https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png',
+                title: 'Powder Canister'
+            }
+        ];
+
+        const produktai = data.map(product => new Produktas(product.title, product.description, product.price, product.discountPercentage, product.rating));
+    
+        console.log(produktai);
+
+        // Klasės kūrimas su funkcija
+        function Gitara(gamintojas) {
+            this.gamintojas = gamintojas;
+
+            function getGamintojas() {
+                return this.gamintojas;
+            }
+        }
+
+        console.log(new Gitara('Fender'));
+    </script>
+</body>
+
+</html>

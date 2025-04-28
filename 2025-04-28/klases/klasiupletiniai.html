@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasių plėtiniai</title>
+</head>
+<body>
+    <script>
+        // Studentas:
+        // Vardas
+        // Pavarde
+        // Asmens kodas
+        // Gimimo data
+        // Vidurkis
+
+        // Dėstytojas:
+        // Vardas
+        // Pavardė
+        // Asmens kodas
+        // Gimimo data
+
+        // DVIEJŲ KLASIŲ PAVYZDYS
+
+        // class Studentas {
+        //     constructor(vardas, pavarde, asmensKodas, gimimoData, vidurkis) {
+        //         this.vardas = vardas;
+        //         this.pavarde = pavarde;
+        //         this.asmensKodas = asmensKodas;
+        //         this.gimimoData = gimimoData;
+        //         this.vidurkis = vidurkis;
+        //     }
+
+        //     getVardas() {
+        //         return this.vardas.toUppercase();
+        //     }
+
+        //     setVidurkis(pazymiai) {
+        //         this.vidurkis = pazymiai.reduce((prev, value) => prev + value, 0) / pazymiai.length;
+        //     }
+        // }
+
+        // const studentas = new Studentas('Jonas', 'Jonaitis', 48041556156, '1980-12-15', 0);
+
+        // console.log(studentas);
+
+        // class Destytojas {
+        //     constructor(vardas, pavarde, asmensKodas, gimimoData) {
+        //         this.vardas = vardas;
+        //         this.pavarde = pavarde;
+        //         this.asmensKodas = asmensKodas;
+        //         this.gimimoData = gimimoData;
+        //     }
+
+        //     getVardas() {
+        //         return this.vardas.toUppercase();
+        //     }
+        // }
+
+        // const destytojas = new Destytojas('Petras', 'Petraitis', 38061556165, '1986-04-28');
+
+        // console.log(destytojas);
+
+
+        // PLĖTINIO PAVYZDYS:
+
+        class Destytojas {
+            constructor(vardas, pavarde, asmensKodas, gimimoData) {
+                this.vardas = vardas;
+                this.pavarde = pavarde;
+                this.asmensKodas = asmensKodas;
+                this.gimimoData = gimimoData;
+            }
+
+            getVardas() {
+                return this.vardas.toUpperCase();
+            }
+        }
+
+        class Studentas extends Destytojas {
+            constructor(vardas, pavarde, asmensKodas, gimimoData, vidurkis) {
+                super(vardas, pavarde, asmensKodas, gimimoData);
+                
+                this.vidurkis = vidurkis;
+            }
+            
+            setVidurkis(pazymiai) {
+                this.vidurkis = pazymiai.reduce((prev, value) => prev + value, 0) / pazymiai.length;
+            }
+        }
+
+        const studentas = new Studentas('Jonas', 'Jonaitis', 48041556156, '1980-12-15', 0);
+        
+        console.log(studentas);
+
+        console.log(studentas.getVardas());
+    </script>
+</body>
+</html>

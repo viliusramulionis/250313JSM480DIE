@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos formatavimas</title>
+</head>
+<body>
+    <script>
+        let data = "2025-04-28"; //Lietuviškas formatas
+        data = "28-04-2025" //Olandiškas formatas
+        data = "4/28/2025"; //Amerikietiškas formatas
+
+        // Norint suformatuoti datą
+        const formatuotaData = new Date(data);
+
+        console.log(formatuotaData.toLocaleDateString('lt-LT'));
+        console.log(formatuotaData.toLocaleDateString('en-GB'));
+        console.log(formatuotaData.toLocaleDateString('en-US'));
+        console.log(formatuotaData.toLocaleDateString('de-DE'));
+        console.log(formatuotaData.toLocaleDateString('nl-NL'));
+    </script>
+</body>
+</html>

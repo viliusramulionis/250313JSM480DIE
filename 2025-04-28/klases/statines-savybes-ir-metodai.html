@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statiniai metodai ir savybės</title>
+</head>
+<body>
+    <script>
+        class Produktas {
+            constructor() {
+                console.log('Konstruktorius aktyvuotas');
+            }
+        }
+
+        // Sugeneruotas objektas iš klasės vadinamas instancija (instance)
+        console.log(new Produktas);
+
+        class Medis {
+            static sakuKiekis = 18;
+
+            static getSakuKiekis() {
+                return this.sakuKiekis;
+            }
+
+            constructor(tipas) {
+                this.tipas = tipas;
+            }
+        }
+
+        console.log(Medis.getSakuKiekis());
+        console.log(Medis.sakuKiekis);
+
+        Medis.sakuKiekis = 90;
+
+        console.log(Medis.sakuKiekis);
+
+        const liepa = new Medis('lapuotis');
+
+        console.log(liepa);
+
+        const egle = new Medis('Spygliuotis');
+
+        console.log(egle);
+
+        console.log(Medis.sakuKiekis);
+    </script>
+</body>
+</html>
