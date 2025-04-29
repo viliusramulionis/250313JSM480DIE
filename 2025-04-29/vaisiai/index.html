@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaisiai</title>
+</head>
+<body>
+    <script>
+        const grauztukai = new Map();
+
+        class Vaisius {
+            // Inkapsuliacija (Encapsulation) - Duomenų slėpimas
+            
+            dydis = this.random(5, 25);
+            id = this.random(1000000, 9999999);
+            prakastas = false;
+
+            random(min, max) {
+                const minCeiled = Math.ceil(min);
+                const maxFloored = Math.floor(max);
+                return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+            }
+
+            prakasti() {
+                this.prakastas = true;
+            }
+        }
+
+        // const vaisius = new Vaisius;
+        
+        // vaisius.prakasti();
+
+        // console.log(vaisius);
+
+        class Krepsys {
+            static vaisiai = []; //0 //19 // 18
+
+            static pripildyti() {
+                for(let i = this.vaisiai.length; i < 20; i++) {
+                    this.vaisiai[i] = new Vaisius;
+                }
+
+                this.vaisiai.sort((a, b) => a.dydis - b.dydis);
+            }
+
+            static isimti() {
+                const vaisius = this.vaisiai.pop();
+
+                if(vaisius.prakastas) {
+                    grauztukai.set(vaisius.id, vaisius);
+                }
+
+                return vaisius;
+            }
+        }
+
+        Krepsys.pripildyti();
+
+        console.log([...Krepsys.vaisiai]);
+
+        Krepsys.isimti();
+
+        Krepsys.pripildyti();
+
+        console.log([...Krepsys.vaisiai]);
+
+        Krepsys.vaisiai[Krepsys.vaisiai.length - 1].prakasti();
+
+        Krepsys.isimti();
+
+        console.log(grauztukai);
+    </script>
+</body>
+</html>

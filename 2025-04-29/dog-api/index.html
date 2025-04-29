@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog API</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        fetch('https://dog.ceo/api/breeds/image/random')
+        .then(resp => resp.json())
+        .then(resp => {
+            document.querySelector('.result').innerHTML = `<img src="${resp.message}">`;
+        });
+
+        // Adreso formatavimas
+        // // https://dog.ceo/api/breed/[VEISLĖS PAVADININAS]/images/random
+
+        // PVZ: Vieno žodžio veislė (african):
+        // https://dog.ceo/api/breed/african/images/random 
+
+        // Dviejų žodžių pavadinimas (Kelpie Australian):
+        // https://dog.ceo/api/breed/australian/kelpie/images/random
+
+        // https://dog.ceo/api/breed/[PIRMAS ŽODIS]/[ANTRAS ŽODIS]/images/random
+    </script>
+</body>
+</html>

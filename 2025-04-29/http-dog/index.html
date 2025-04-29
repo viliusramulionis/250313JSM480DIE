@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Dog status</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script> 
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Adresas: https://http.dog/
+
+        console.log('A');
+
+        const kodai = [100, 101, 102, 200, 202, 404, 500];
+
+        fetch(`https://http.dog/${kodai[random(0, kodai.length -1)]}.json`)
+        // Norint konvertuoti JSON kodą:
+        .then(resp => resp.json())
+        // Susigrąžiname konvertuotą kodą:
+        .then(resp => {
+            console.log('B'); 
+            document.querySelector('.result').innerHTML = `<img src="${resp.image.jpg}" width="500">`;
+        });
+
+        console.log('C');
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Televizorius</title>
+</head>
+<body>
+    <script>
+        class Televizorius {
+            garsas = 50;
+            kanalas = 1;
+
+            constructor(gamintojas) {
+                this.gamintojas = gamintojas;
+            }
+
+            setGarsas(padidinti = false) {
+                if(this.garsas === 0 || this.garsas === 100)
+                    return this;
+
+                if(padidinti) {
+                    this.garsas++;
+                } else {
+                    this.garsas--;
+                }
+
+                return this;
+            }
+
+            setKanalas(kanalas, padidinti = true) {
+                if(kanalas) {
+                    if(kanalas > 50 || kanalas < 1) {
+                        this.kanalas = 1;
+                    } else {
+                        this.kanalas = kanalas;
+                    }
+                } else {
+                    if(padidinti) {
+                        if(this.kanalas === 50 ) {
+                            this.kanalas = 1;
+                        } else {
+                            this.kanalas++;
+                        }
+                    } else {
+                        if(this.kanalas > 1) {
+                            this.kanalas--;
+                        }
+                    }
+                }
+            }
+
+            setFactorySettings() {
+                this.garsas = 50;
+                this.kanalas = 1;
+            } 
+
+            getCurrentStatus() {
+                return `Televizorius "${this.gamintojas}" šiuo metu rodo ${this.kanalas} kanalą. Garso lygis ${this.garsas}.`;
+            }
+        }
+
+        const sony = new Televizorius('Sony');
+        const lg = new Televizorius('Lg');
+        const samsung = new Televizorius('Samsung');
+
+        sony.setGarsas(true).setGarsas(true).setGarsas(true);
+
+        samsung.setKanalas(48);
+        samsung.setKanalas();
+        samsung.setKanalas();
+        samsung.setKanalas(13);
+
+        samsung.setFactorySettings();
+        
+        console.log(samsung.getCurrentStatus());
+
+        lg.setKanalas(12);
+        lg.setGarsas(22);
+    </script>
+</body>
+</html>

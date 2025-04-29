@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        // Interpreter (Interpretuotojas)
+        const JSONmasyvas = "[15, 25, 35]";
+
+        const JSONpavyzdys = `
+            [
+                {
+                    "pavadinimas" : "Geras produktas",
+                    "kaina": 199.99,
+                    "aktyvus": false
+                }
+            ]
+        `;
+
+        console.log(JSONpavyzdys);
+
+        // Norint konvertuoti JSON stringą:
+        const masyvas = JSON.parse(JSONpavyzdys);
+        
+        console.log(masyvas);
+
+        const naujasMasyvas = [
+            {
+                pavadinimas : "Geras produktas",
+                kaina: 199.99,
+                aktyvus: false
+            }
+        ];
+        
+        // Konvertuoja Javascript duomenis į JSON stringą
+        console.log(JSON.stringify(naujasMasyvas));
+
+
+    </script>
+</body>
+</html>

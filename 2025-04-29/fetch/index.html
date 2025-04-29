@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <script>
+        // API - Application programming interface
+        
+        // Fetch funkcija atlieka užklausą (request) norimu adresu ir grąžina atgal atsakymą (response)
+        fetch('https://elenta.lt/')
+        // text() metodas konvertuoja atsakymo duomenis į tekstinį pavadidalą
+        .then(resp => resp.text())
+        // Grąžinamas atgal konvertuotas atsakymas prie parametro resp
+        .then(resp => {
+            document.querySelector('body').innerHTML = resp;
+        });
+    </script>
+</body>
+</html>
