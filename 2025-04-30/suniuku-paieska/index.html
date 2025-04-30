@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šuniukų paieškos sistema</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="mb-5">
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Enter dog breed"
+                onkeyup="handleOnKeyUp(event)"
+            >
+        </div>
+        <div class="result"></div>
+    </div>
+    <script>
+        const handleOnKeyUp = (e) => {
+            if(e.target.value === '')
+                return;
+
+            const result = document.querySelector('.result');
+            const value = e.target.value.replaceAll(' ', '/').toLowerCase();
+            result.innerHTML = '';
+
+            fetch(`https://dog.ceo/api/breed/${value}/images/random`)
+            .then(resp => resp.json())
+            .then(resp => {
+                if(resp.status !== 'success') 
+                    return;
+
+                    result.innerHTML = `<img src="${resp.message}">`;
+            });
+        }
+    </script>
+</body>
+</html>
