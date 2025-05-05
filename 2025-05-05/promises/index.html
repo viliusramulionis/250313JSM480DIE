@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <link rel="icon" href="favicon.svg">
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+        console.log('A'); //1 atliekamas veiksmas
+
+        fetch('https://dog.ceo/api/breeds/list/all') //Įvyksta laukimas kol bus gaunamas atsakymas
+        .then(resp => resp.json()) //Kai atsakymas pradedamas gauti pradedame skaityti JSON formatą
+        .then(resp => { //Pateikiamas galutinis gautas atsakymas
+            console.log('B');
+            console.log(resp)
+        });
+
+        console.log('C');
+
+        console.log(fetch('https://dog.ceo/api/breeds/list/all'));
+
+        const pazadas = new Promise((pavyko, nepavyko) => {
+            setTimeout(() => {
+                if(random(0, 1) === 0) {
+                    pavyko('Veiksmas sėkmingai atliktas');
+                } else {
+                    nepavyko({ message: 'Nepavyko atlikti veiksmo', code: 500 });
+                }
+            }, 3000);
+        });
+
+        pazadas
+        // metode then perduodama funkcija yra priimama kaip parametras "pavyko"
+        .then(atsakymas => console.log(atsakymas)) 
+        // catch metodas aktyvuojamas kai inicijuojama funkcija "nepavyko"
+        .catch(klaida => console.log('Įvyko klaida', klaida.message, klaida.code)) 
+        // finally metodas aktyvuojamas kai inicijuojama bet kuri iš dviejų funkcijų
+        .finally(() => console.log('Krovimas baigtas'));
+    </script>
+</body>
+</html>

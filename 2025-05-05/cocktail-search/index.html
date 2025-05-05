@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cocktail Search App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .cocktail {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      cursor: pointer;
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .cocktail img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      margin-right: 15px;
+    }
+
+    .details img {
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    .details {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cocktail Search</h1>
+  <input type="text" id="search" oninput="handleInput()" placeholder="Search for a cocktail...">
+  <div id="results"></div>
+  <div id="details" style="display:none;"></div>
+
+  <script>
+    // document.querySelector('#search')
+    const searchInput = document.getElementById('search');
+    // document.querySelector('#results')
+    const resultsDiv = document.getElementById('results');
+    // document.querySelector('#details')
+    const detailsDiv = document.getElementById('details');
+
+    const handleInput = async () => {
+      // Paima laukelio reikšmę ir su metodu trim() pravalo tarpus stringo priekyje ir pabaigoje
+      const query = searchInput.value.trim();
+
+      // Tikrinama ar įvestas tekstas laukelyje nėra tuščias stringas
+      if (query.length === 0) {
+        // Atvaizduojamas tuščias stringas prie rezultatų
+        resultsDiv.innerHTML = '';
+        // Nutraukiamas tolimesnis funkcijos veikimas
+        return;
+      }
+
+      // Formuojama užklausa pagal įvestą parametrą
+      const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`);
+      const data = await res.json();
+
+      // Prieš tai buvusių rezultatų išvalymas
+      resultsDiv.innerHTML = '';
+      // Tikriname ar pavyko rasti kokteilių pagal pateiktą užklausą
+
+      if (!data.drinks) {
+        // Jeigu ne atvaizduojame žinutę, kad nieko neradome
+        resultsDiv.innerHTML = '<p>No results found.</p>';
+        // Nutraukiamas tolimesnis funkcijos veikimas
+        return;
+      }
+
+      // Iteruojame per visus kokteilius
+      data.drinks.forEach(drink => {
+        // Kuriamas div elementas
+        const div = document.createElement('div');
+        // Prie jo priskiriama klasė
+        div.className = 'cocktail';
+        // Ir įkeliamas turinys į vidų
+        div.innerHTML = `
+          <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
+          <span>${drink.strDrink}</span>
+        `;
+
+        // Registruojamas paspaudimo įvykis
+        div.addEventListener('click', () => showDetails(drink.idDrink));
+        // Sukurtas elementas patalpinamas į rezultatų div'ą
+        resultsDiv.appendChild(div);
+      });
+    };
+
+    async function showDetails(id) {
+      const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+      const data = await res.json();
+      const drink = data.drinks[0];
+      resultsDiv.style.display = 'none';
+      searchInput.style.display = 'none';
+      detailsDiv.style.display = 'block';
+
+      let ingredients = '';
+      for (let i = 1; i <= 15; i++) {
+        const ingredient = drink[`strIngredient${i}`];
+        const measure = drink[`strMeasure${i}`];
+        if (ingredient) {
+          ingredients += `<li>${measure || ''} ${ingredient}</li>`;
+        }
+      }
+
+      detailsDiv.innerHTML = `
+        <div class="details">
+          <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
+          <h2>${drink.strDrink}</h2>
+          <p><strong>Instructions:</strong> ${drink.strInstructions}</p>
+          <p><strong>Glass:</strong> ${drink.strGlass}</p>
+          <p><strong>Type:</strong> ${drink.strAlcoholic}</p>
+          <h3>Ingredients:</h3>
+          <ul>${ingredients}</ul>
+          <button onclick="goBack()">Back to list</button>
+        </div>
+      `;
+    }
+
+    function goBack() {
+      detailsDiv.style.display = 'none';
+      searchInput.style.display = 'block';
+      resultsDiv.style.display = 'block';
+    } 
+  </script>
+</body>
+
+</html>

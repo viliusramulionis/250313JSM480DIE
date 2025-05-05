@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-await</title>
+</head>
+<body>
+    <script>
+        // Fetch funkcija grąžina paždą (promise), kuris yra asinkroninis
+        // CALLBACK HELL PAVYZDYS:
+
+        // fetch('https://google.com')
+        // .then(resp => resp.text())
+        // .then(adresas => {
+        //     fetch(adresas)
+        //     .then(resp => resp.text())
+        //     .then(adresas2 => {
+        //         fetch(adresas2)
+        //         .then(resp => resp.text())
+        //         .then(adresas3 => {
+        //             fetch(adresas3)
+        //             .then(resp => resp.text())
+        //             .then(adresas4 => {
+        //                 fetch(adresas4)
+        //                 .then(resp => resp.text())
+        //                 .then(tekstas => {
+        //                     console.log(tekstas);
+        //                 });
+        //             });
+        //         });
+        //     });
+        // });
+        
+        // fetch('https://dog.ceo/api/breeds/list/all')
+        // .then(resp => console.log(resp));
+
+        async function krovimas() {
+            // Asinchroninėje funkcijoje galime sinchronizuoti visus veiksmus pagal jų išdėstymo tvarką
+            console.log('A')
+
+            const rezultatas = await fetch('https://dog.ceo/api/breeds/list/all');
+
+            // rezultatas.json().then(resp => {
+            //     console.log(resp);
+            // });
+
+            console.log(await rezultatas.json());
+
+            console.log('B')
+        }
+
+        krovimas();
+
+        // ASINCHRONINĖS ARROW FUNKCIJOS PAVYZDYS:
+
+        const sunuVeiksles = async () => {
+            console.log('A')
+
+            const rezultatas = await fetch('https://dog.ceo/api/breeds/list/all');
+
+            // rezultatas.json().then(resp => {
+            //     console.log(resp);
+            // });
+
+            console.log(await rezultatas.json());
+
+            console.log('B')
+        }
+
+        sunuVeiksles();
+    </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Ubuntu", sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        .card {
+            max-width: 768px;
+            margin: 50px auto 0;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 0 1px rgba(0,0,0,.5);
+            text-align: center;
+            padding: 35px 50px 50px;
+            position: relative;
+        }
+
+        .card::after {
+            content: "";
+            width: 100%;
+            height: 130px;
+            display: block;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid rgba(0,0,0,.15);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -0;
+        }
+
+        .image {
+            margin-top: 0;
+            position: relative; 
+            z-index: 1;
+        }
+
+        .image img {
+            border-radius: 50%;
+        }
+
+        .new {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 16px;
+            padding: 8px 20px;
+            border-radius: 4px;
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            opacity: 0;
+            transition: bottom .4s ease-in-out,
+                        opacity .4s ease-in-out;
+        }
+
+        .image:hover .new {
+            bottom: -20px;
+            opacity: 1;
+        }
+        
+        .info {
+            padding-top: 30px;
+        }
+
+        .info .label {
+            color: #999;
+            font-size: 18px;
+        }
+
+        .info .value {
+            color: #2c2e31;
+            font-size: 38px;
+            margin: 5px;
+            text-transform: capitalize;
+        }
+
+        .icons ul {
+            margin: 20px 0 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .icons ul li {
+            width: 40px;
+            height: 48px;
+            cursor: pointer;
+            display: block;
+            background-image: url(./card_icons.png);
+            background-size: 378px;
+            transition: all .25s ease-out;
+            background-position-y: -48px;
+        }
+
+        .icons ul li:nth-child(1) {
+            background-position-x: 0;
+        }
+
+        .icons ul li:nth-child(2) {
+            background-position-x: -68px;
+        }
+
+        .icons ul li:nth-child(3) {
+            background-position-x: -135px;
+        }
+
+        .icons ul li:nth-child(4) {
+            background-position-x: -203px;
+        }
+
+        .icons ul li:nth-child(5) {
+            background-position-x: -270px;
+        }
+
+        .icons ul li:nth-child(6) {
+            background-position-x: -338px;
+        }
+
+        .icons ul li.active {
+            background-position-y: -96px;
+        }
+
+        .image-wrapper {
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,.25);
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .image-wrapper img { 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        const result = document.querySelector('.result');
+
+        const mouseenter = (e) => {
+            // Klasės active pašalinimas visoms ikonoms
+            e.target.parentNode.querySelectorAll('li').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Pridedame klasę active ikonai virš kurios yra pelė
+            e.target.classList.add('active');
+
+            // console.log(e.target.dataset.label, e.target.dataset.value);
+
+            document.querySelector('.label').textContent = e.target.dataset.label;
+            document.querySelector('.value').textContent = e.target.dataset.value;
+        }
+
+        const getData = () => {
+            fetch('https://randomuser.me/api/')
+            .then(resp => resp.json())
+            .then(resp => {
+                console.log(resp);
+                const data = resp.results[0];
+
+                result.innerHTML = `        
+                    <div class="card">
+                        <div class="image">
+                            <div class="image-wrapper">
+                                <img src="${data.picture.large}" alt="">
+                            </div>
+                            <span class="new" onclick="getData()">New</span>
+                        </div>
+                        <div class="info">
+                            <div class="label">Hi, My name is</div>
+                            <div class="value">${data.name.first} ${data.name.last}</div>
+                        </div>
+                        <div class="icons">
+                            <ul>
+                                <li 
+                                    onmouseenter="mouseenter(event)" 
+                                    data-label="Hi, My name is" 
+                                    data-value="${data.name.first} ${data.name.last}">
+                                </li>
+                                <li 
+                                    onmouseenter="mouseenter(event)" 
+                                    data-label="My email address is" 
+                                    data-value="${data.email}">
+                                </li>
+                                <li 
+                                    onmouseenter="mouseenter(event)" 
+                                    data-label="My birthday is" 
+                                    data-value="${new Date(data.dob.date).toLocaleDateString()}">
+                                </li>
+                                <li 
+                                    onmouseenter="mouseenter(event)" 
+                                    data-label="My address is" 
+                                    data-value="${data.location.street.number} ${data.location.street.name}">
+                                </li>
+                                <li 
+                                    onmouseenter="mouseenter(event)" 
+                                    data-label="My phone number is" 
+                                    data-value="${data.phone}">
+                                </li>
+                                <li 
+                                    onmouseenter="mouseenter(event)" 
+                                    data-label="My password is" 
+                                    data-value="${data.login.password}">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        window.onload = () => {
+            getData();
+        }
+    </script>
+</body>
+</html>
