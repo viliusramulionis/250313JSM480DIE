@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealDB</title>
+    <!-- Bootstrap integracija -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        img {
+            max-width: 100%;
+        }
+
+        .alphabet {
+            display: flex;
+            gap: 25px;
+        }
+
+        .alphabet li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 1024px;">
+        <form class="my-5" onsubmit="handleSubmit(event)">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter meal title">
+                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-secondary" onclick="handleRandom(event)">I'm Feeling Lucky</button>
+            </div>
+        </form>
+        <div class="alphabet mb-5"></div>
+        <div class="result"></div>
+    </div>
+    <script>
+        const result = document.querySelector('.result');
+        const alphabet = document.querySelector('.alphabet');
+        const base_url = 'https://www.themealdb.com/api/json/v1/1/';
+
+        let action;
+        let keyword;
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+
+            const value = e.target.querySelector('input').value;
+
+            action = 'search';
+            keyword = value;
+
+            getData(value);
+        }
+
+        const handleSingleMeal = async (e, id) => {
+            e.preventDefault();
+
+            getSingleMealData(id);
+        }
+
+        
+        const handleRandom = (e) => {
+            e.preventDefault();
+
+            getSingleMealData();
+        }
+
+        const backToTheList = (e) => {
+            getData(keyword, action);
+        }
+
+        const filterByCategory = (e, value) => {
+            action = 'c';
+            keyword = value;
+
+            getData(keyword);
+        }
+
+        const filterByArea = (e, value) => {
+            action = 'a';
+            keyword = value;
+
+            getData(keyword);
+        }
+
+        const filterByIngredient = (e, value) => {
+            action = 'i';
+            keyword = value;
+
+            getData(keyword);
+        }
+
+        const filterByLetter = (e, value) => {
+            action = 'alphabet';
+            keyword = value;
+
+            getData(keyword)
+        }
+
+        const generateIngredients = (data) => {
+            let ingredients = '';
+
+            for(let i = 1; i <= 20; i++) {
+                if(data['strIngredient' + i] !== '') {
+                    ingredients += `
+                        <li>
+                            <a href="#" onclick="filterByIngredient(event, '${data['strIngredient' + i]}')">
+                                ${data['strIngredient' + i]} ${data['strMeasure' + i]}
+                            </a>
+                        </li>
+                    `;
+                }
+            }
+
+            return ingredients;
+        }
+
+        const getData = async (keyword) => {   
+            let url = 'search.php?s=';
+
+            if(action !== 'search') {
+                url = `filter.php?${action}=`;
+            }
+
+            if(action === 'alphabet') {
+                url = `search.php?f=`;
+            }
+
+            let data = await fetch(`${base_url}${url}${keyword}`);
+            data = await data.json();
+
+            if(!data.meals)
+                return result.innerHTML = `
+                    <div class="alert alert-warning">We couldn't find any meal with your search criteria</div>
+                `;
+
+            const row = document.createElement('div');
+            row.classList.add('row');
+
+            // console.log(data.meals);
+
+            row.innerHTML = data.meals.map(value => `
+                <div class="col-12 col-md-4 mb-3">
+                    <a href="#" onclick="handleSingleMeal(event, ${value.idMeal})">
+                        <img src="${value.strMealThumb}" alt="${value.strMeal}" />
+                        <h4 class="mt-3">${value.strMeal}</h4>
+                    </a>
+                </div>
+            `).join('');
+
+            result.innerHTML = '';
+            result.append(row);
+        }   
+
+        const getSingleMealData = async (id) => {
+            let url = `random.php`;
+
+            if(id) {
+                url = `lookup.php?i=${id}`;
+            }
+
+            let data = await fetch(`${base_url}${url}`);
+            data = await data.json();
+            data = data.meals[0];
+
+            console.log(data);
+
+            result.innerHTML = `
+                <div class="row mb-5">
+                    <div class="col-12 col-md-6">
+                        <img src="${data.strMealThumb}" alt="${data.strMeal}" class="mb-3"/>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/${data.strYoutube.split('?v=')[1]}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h3>${data.strMeal}</h3>
+                        <p>${data.strInstructions}</p>
+                        <h4>Category:</h4>
+                        <p>
+                            <a href="#" onclick="filterByCategory(event, '${data.strCategory}')">${data.strCategory}</a>
+                        </p>
+                        <h4>Country:</h4>
+                        <p>
+                            <a href="#" onclick="filterByArea(event, '${data.strArea}')">${data.strArea}</a>
+                        </p>
+                        <h4>Ingredients:</h4>
+                        <ul>
+                            ${generateIngredients(data)}
+                        </ul>
+                        <a href="#" onclick="backToTheList(event)">Back to the List</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        const generateAlphabet = () => {
+            const letters = [];
+
+            for(let i = 65; i < 91; i++) {
+                letters.push(String.fromCharCode(i))
+            }
+
+            alphabet.innerHTML = letters.map(value => `
+                <li><a href="#" onclick="filterByLetter(event, '${value}')">${value}</a></li>
+            `).join('');
+        }
+
+        window.onload = () => {
+            generateAlphabet();
+        }
+
+
+    </script>
+</body>
+</html>
