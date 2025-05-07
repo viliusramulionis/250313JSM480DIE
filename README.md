@@ -78,3 +78,12 @@
     git merge BRANCHAS_IS_KURIO_NORIME_PAIMTI_DUOMENIS
 
     git push
+
+# NodeJS komandos
+    npm init                                | sukuria package.json failą 
+    npm init -y                             | atlieka tą patį kaip ankstesnė komanda, tik supildo visus duomenis iš karto
+    npm install [moduliopavadinimas]        | instaliuoja pasirinktą modulį
+    npm update                              | atnaujina paketų versijas
+    ctrl + c                                | norint nutraukti paleistos programos veikimą
+    npm install -g nodemon                  | įrašo nodemon paketą prieinamą visuose projektuose
+    npm run [skriptopavadinimas]            | akvytuoja package.json faile scripts pogrupyje ivardintą komandinę eilutę
