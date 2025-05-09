@@ -86,4 +86,4 @@
     npm update                              | atnaujina paketų versijas
     ctrl + c                                | norint nutraukti paleistos programos veikimą
     npm install -g nodemon                  | įrašo nodemon paketą prieinamą visuose projektuose
-    npm run [skriptopavadinimas]            | akvytuoja package.json faile scripts pogrupyje ivardintą komandinę eilutę
+    npm run [skriptopavadinimas]            | aktyvuoja package.json faile scripts pogrupyje ivardintą komandinę eilutę
