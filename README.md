@@ -87,3 +87,6 @@
     ctrl + c                                | norint nutraukti paleistos programos veikimą
     npm install -g nodemon                  | įrašo nodemon paketą prieinamą visuose projektuose
     npm run [skriptopavadinimas]            | aktyvuoja package.json faile scripts pogrupyje ivardintą komandinę eilutę
+
+# React aplikacijos kūrimas:
+    npm create vite@latest
