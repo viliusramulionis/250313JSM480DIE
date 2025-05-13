@@ -11,7 +11,9 @@ function App() {
     // Skirtingai nei template literals variante, dolerio ženklas JSX'e nėra rašomas norint atvaizduoti reiškmę
     <>
       {/* Komponento priskyrimas dokumente */}
-      <Header />
+      <div>
+        <Header />
+      </div>
       <div className="intro">
         <h1>Sveiki, {vardas}</h1>
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, sed!</h2>

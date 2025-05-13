@@ -1,0 +1,13 @@
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul a {
+    color: rgb(66, 66, 66);
+    font-weight: 400;
+    text-decoration: none;
+}

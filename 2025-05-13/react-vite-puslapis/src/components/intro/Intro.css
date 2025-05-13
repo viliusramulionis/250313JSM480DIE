@@ -1,0 +1,14 @@
+.intro-heading {
+    font-size: 56px;
+    font-weight: 700;
+    color: #3c3c43;
+}
+
+.intro-heading div {
+    background: #5AB1FE;
+    background-image: linear-gradient(136deg,rgba(90, 177, 254, 1) 0%, rgba(188, 52, 253, 1) 100%);
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    width: fit-content;
+}

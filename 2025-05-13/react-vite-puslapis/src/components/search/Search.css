@@ -1,0 +1,12 @@
+.search-input {
+    background-color: #f5f5f6;
+    border-color: #f5f5f6;
+    width: 300px;
+    padding-left: 40px;
+}
+
+.bi-search {
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
