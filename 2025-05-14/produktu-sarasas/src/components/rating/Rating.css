@@ -1,0 +1,15 @@
+.rating {
+    position: relative;
+    width: fit-content;
+}
+
+.stars-active {
+    color: rgb(250, 208, 38);
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.stars {
+    color: gray;
+}

@@ -1,0 +1,13 @@
+.product-title {
+    font-size: 18px;
+    color: rgb(6, 151, 247);
+}
+
+.discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 3px 10px;
+}

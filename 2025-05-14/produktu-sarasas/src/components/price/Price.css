@@ -1,0 +1,11 @@
+.price .current {
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.price .old {
+    color: gray;
+    font-size: 14px;
+    text-decoration: line-through;
+}
