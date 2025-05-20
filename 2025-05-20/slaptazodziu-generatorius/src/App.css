@@ -1,0 +1,9 @@
+.rezultatas {
+  background-color: rgb(227, 227, 227);
+  height: 60px;
+  border-radius: 5px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

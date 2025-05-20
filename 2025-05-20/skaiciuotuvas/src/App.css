@@ -1,0 +1,11 @@
+.button {
+  width: 33.333333%;
+  height: 70px;
+}
+
+.action-button {
+  display: block;
+  width: 80px;
+  height: 70px;
+  font-size: 24px;
+}
