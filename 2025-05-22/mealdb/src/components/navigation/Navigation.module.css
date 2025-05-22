@@ -1,0 +1,8 @@
+.navlink {
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    color: #f3722b;
+}
