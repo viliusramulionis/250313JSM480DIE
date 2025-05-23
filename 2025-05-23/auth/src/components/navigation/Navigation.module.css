@@ -1,0 +1,9 @@
+.navItem {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navItem:hover {
+    color: rgb(126, 95, 9);
+}
