@@ -7,8 +7,9 @@ const router = Router();
 router.post('/', async (req, res) => {
     try {
         res.json(await user.create(req.body));
-    } catch {
-        res.status(500).json('Could not save data');
+    } catch(e) {
+        // console.log(e.message);
+        res.status(500).json('Atsiprašome, tačiau nepavyko išsaugoti vartotojo. Bandykite dar kartą.');
     }
 });
 

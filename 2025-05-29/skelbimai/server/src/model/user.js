@@ -1,10 +1,31 @@
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    password: String,
-    photo: String,
+export default mongoose.model('user', new mongoose.Schema({
+    name: {
+        type: String,
+        // Nurodymas, jog reikšmė yra privaloma
+        required: true,
+        // Nurodo grąžinamą žinutę nepavykus gauti reikšmei
+        // required: [true, 'Name is required']
+    },
+    email: {
+        type: String,
+        required: true,
+        // Nurodymas, jog reikšmė negali dubliuotis kolekcijoje
+        unique: true,
+        // El. pašto adreso validacija:
+        validate: (email) => {
+            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+        }
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    photo: {
+        type: String,
+        default: null
+    },
     created_at: {
         type: Date,
         default: Date.now()
@@ -13,6 +34,4 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     }
-});
-
-export default mongoose.model('user', userSchema);
+}));

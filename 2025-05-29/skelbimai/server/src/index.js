@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import user from './controller/user.js';
+import category from './controller/category.js';
+import advertisement from './controller/advertisement.js';
 
 try {
     await mongoose.connect('mongodb://127.0.0.1:27017/advertisements');
@@ -24,6 +26,8 @@ app.use(express.urlencoded());
 // Priskiriame controlerį prie bendros aplikacijos
 // Pirmu parametru nurodomas kelias, antru routeris
 app.use('/api/user', user);
+app.use('/api/category', category);
+app.use('/api/advertisement', advertisement);
 
 app.listen(3000, () => console.log('Server is running'));
 
