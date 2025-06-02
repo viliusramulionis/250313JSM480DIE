@@ -1,7 +1,13 @@
+import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 import { extractFormData } from '../utils/common';
+import Alert from '../components/alert/Alert';
+import MainContext from '../context/MainContext';
 import axios from 'axios';
 
 export default () => {
+    const { setContext } = useContext(MainContext);
+    const navigate = useNavigate();
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,13 +28,40 @@ export default () => {
             }
         };
 
+        // setLoading(true);
+
+        setContext(prev => ({ ...prev, loading: true }));
+
         axios.post('/api/user', data, config)
-        .then(resp => console.log(resp));
+        // Aktyvuojama kai gautas statuso kodas 200
+        .then(resp => {
+            setContext(prev => ({ 
+                ...prev, 
+                message: 'Sveikiname sėkmingai užsiregistravus!', 
+                status: 'success' 
+            }));
+
+            setTimeout(() => navigate('/'), 4000);
+        })
+        // Kai gaunamas klaidos statuso kodas
+        .catch(err => {
+            setContext(prev => ({ 
+                ...prev, 
+                message: err.response.data, 
+                status: 'danger' 
+            }));
+        })
+        // Bet kuriuo atveju aktyvuojama funkcija
+        .finally(() => setContext(prev => ({ ...prev, loading: false })));
     }
 
     return (
         <>
             <h1 className="mb-5">Registracija</h1>
+
+            {/* Žinutės atvaizdavimas: */}
+            <Alert />
+
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <input 

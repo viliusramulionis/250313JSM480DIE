@@ -9,3 +9,7 @@ export const extractFormData = (form) => {
 
     return data;
 }
+
+export const convertFormatText = (text) => {
+    return text.split('\n').map((value, index) => <span key={index}> {value} <br /> </span>);
+}

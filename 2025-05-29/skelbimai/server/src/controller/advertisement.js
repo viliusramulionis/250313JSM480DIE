@@ -8,7 +8,7 @@ const router = Router();
 router.get('/', async(req, res) => {
     try {
         // Metodas populate nurodo kokias id laukelių asociacijas užpildyti
-        res.json(await advertisement.find().populate({ path: 'user', select: ['name', 'photo']}));
+        res.json(await advertisement.find());
     } catch(e) {
         console.log(e);
         res.status(500).json('Atsiprašome, tačiau nepavyko ištraukti nurodytų skelbimų.');
@@ -19,7 +19,7 @@ router.get('/', async(req, res) => {
 router.get('/:id', async(req, res) => {
     try {
         // findById suranda vieną rezultatą pagal indentifikatorių
-        res.json(await advertisement.findById(req.params.id));
+        res.json(await advertisement.findById(req.params.id).populate({ path: 'user', select: ['name', 'photo'] }));
     } catch(e) {
         // console.log(e);
         res.status(500).json('Atsiprašome, tačiau nepavyko ištraukti nurodytų skelbimų.');
