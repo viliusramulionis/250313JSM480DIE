@@ -6,7 +6,6 @@ import DeductFunds from './pages/DeductFunds';
 import './App.css'
 
 const App = () => {
-
   return (
     <>
       <BrowserRouter>

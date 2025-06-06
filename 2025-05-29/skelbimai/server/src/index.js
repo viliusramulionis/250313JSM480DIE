@@ -15,7 +15,7 @@ try {
 const app = express();
 
 // Nurodymas leisti užklausas iš skirtingų tinklapių nei šis serveris
-app.use(cors())
+app.use(cors());
 
 // Nurodymas priimti duomenis x-www-form-urlencoded formatu
 app.use(express.urlencoded());
